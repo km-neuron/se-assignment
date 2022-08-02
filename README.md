@@ -6,29 +6,30 @@
 * Mengerti cara membuat Algoritma, Pseudocode, dan Flowchart
 
 ## Restrictions
-* Tidak boleh mengerjakan dalam 1 (satu) file
+* Tidak boleh mengerjakan pada repository ini.
+* Tidak boleh mengerjakan Algoritma, Pseudocode, dan Flowchart dalam 1 (satu) file
 * Tidak boleh membuat *commit message* yang kurang jelas (contoh: "init file", "update", "done")
 
 ## Acceptance criteria
 * Minimal memiliki satu atau dua variable
-* Minimal memiliki 1 looping DAN/ATAU memiliki 1 conditional
+* Minimal memiliki 1 conditional DAN/ATAU memiliki 1 looping
 
 ## Directions:
-Buatlah Algoritma, Pseudocode, dan Flowchart dari sebuah alpikasi. Sebelumnya kalian diwajibkan membuat *public repository* untuk menyimpan file pengerjaannya dengan format penamaan **student_name-application_name** (contoh: dito_bagus-calculator_app). Masing-masing file **WAJIB** di buat pada branch yang berbeda. Buatlah *commit message* yang berkualitas dan relate dari setiap proses pengerjaannya. Kalian diperbolehkan membuat 3 (tiga) Pull Request untuk setiap branch atau hanya 1 (satu) Pull Requst untuk 3 branch yang kalian buat.
+Buatlah Algoritma, Pseudocode, dan Flowchart dari sebuah alpikasi. Sebelumnya kalian diwajibkan membuat *private repository* untuk menyimpan file pengerjaannya dengan format penamaan **student_name-application_name** (contoh: dito_bagus-calculator_app). Masing-masing file **WAJIB** di buat pada branch yang berbeda. Buatlah *commit message* yang berkualitas dan relate dari setiap proses pengerjaannya. Kalian diperbolehkan membuat 3 (tiga) Pull Request untuk setiap branch atau hanya 1 (satu) Pull Requst untuk 3 branch yang kalian buat.
 
-Setelah semua file selesai dikerjakan buatlah video penjelasan untuk dari final project yang mencakup:
+Setelah semua file selesai dikerjakan buatlah video penjelasan dari final project yang mencakup:
 * Alasan pemilihan aplikasi yang dibuat
 * Tools yang digunakan
 * Alur pembuatan
 * Alur dari flow pada repository melalui Git history
 
-File video wajib disimpan pada Google Drive dan bersifat **Public**
+File video wajib disimpan pada **Google Drive pribadi** dan bersifat **Public**, pastikan link yang diinput pada LMS merupakan link video (bukan link folder penyimpanan video). Untuk contoh video yang harus dibuat, bisa kalian cek [disini](https://drive.google.com/file/d/1d8HmD-VqczGhEY6YBO3zZQ_tUcDZVUnn/view?usp=sharing) 
 
 ## Refrensi aplikasi:
-* Membuat Todo List.
-* Membuat Shopping Cart sederhana (menambahkan barang ke shopping cart).
-* Membuat sistem kasir (Memasukan item dan auto calculate total harga).
-* Membuat proses Order GoFood.
+* Todo List.
+* Shopping Cart sederhana (menambahkan barang ke shopping cart dan calculate jumlah barang).
+* Sistem kasir (Memasukan item dan auto calculate total harga).
+* Proses order makanan/minuman via online.
 
 ## Output:
 * File Algoritma
