@@ -21,7 +21,7 @@ Buatlah sebuah *private repository* baru untuk menyimpan file pengerjaannya deng
 ## Directions:
 Buatlah Algoritma, Pseudocode, dan Flowchart dari sebuah aplikasi. Masing-masing *file* **WAJIB** dibuat pada *branch* yang berbeda. Buatlah *commit message* yang berkualitas dan *relate* dari setiap proses pengerjaannya. Kalian diperbolehkan membuat **3 (tiga) Pull Request** untuk setiap *branch* atau hanya **1 (satu) Pull Request** untuk 3 *branch* yang kalian buat.
 
-Setelah semua *file* selesai dikerjakan, buatlah video penjelasan dari *final project* yang mencakup:
+Setelah semua *file* selesai dikerjakan, buatlah video penjelasan dari *final project* (max. 5 menit) yang mencakup:
 * Alasan pemilihan aplikasi yang dibuat.
 * *Tools* yang digunakan.
 * Alur pembuatan.
