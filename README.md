@@ -12,22 +12,14 @@
 * Minimal memiliki 1 conditional DAN/ATAU memiliki 1 looping.
 
 ## Directions:
-Buatlah Pseudocode dan Flowchart dari sebuah aplikasi. Masing-masing *file* **WAJIB** dibuat pada *branch* yang berbeda. Buatlah *commit message* yang berkualitas dan *relate* dari setiap proses pengerjaannya. Kalian diperbolehkan membuat **2 (dua) Pull Request** untuk setiap *branch* atau hanya **1 (satu) Pull Request** untuk 2 *branch* yang kalian buat.
-
-Setelah semua *file* selesai dikerjakan, buatlah video penjelasan dari *final project* (max. 5 menit) yang mencakup:
-* Alasan pemilihan aplikasi yang dibuat.
-* *Tools* yang digunakan.
-* Hasil pengerjaan Pseudocode dan Flowchart.
-* Alur pembuatan.
-* Commit message yang dibuat.
-* Alur dari *flow* pada repository melalui Git *history*/*Network*.
-
-*File* video wajib disimpan pada **Google Drive pribadi** dan bersifat **Public**, pastikan *link* yang diinput pada LMS merupakan *link* video (bukan *link* *folder* penyimpanan video). Untuk contoh video yang harus dibuat, bisa kalian cek [disini](https://drive.google.com/file/d/1NiByiEtGoGllLPMSs23Jvh1G-k9jnX5d/view?usp=sharing).
+Buatlah **Pseudocode** dan **Flowchart** dari salah satu aplikasi yang disarankan dibawah.
+Untuk pembuatan flowchart pastikan mengikuti kentuan yang ada pada materi flowchat (Neurons), terutama dalam **pemilihan _shape_ yang akan digunakan**. Setelah semua file dikerjakan, **WAJIB** di upload pada **google form** yang akan di berikan oleh instruktur.
 
 ## Referensi aplikasi:
 Pilihlah salah satu dari aplikasi di bawah ini:
 * *Todo List.*
-* *Hospital Admission* (proses penerimaan data diri pasien).
+* *Hospital Admission* (proses pendaftaran data pasien rawat inap).
+* *Library App* (proses peminjaman dan pengembalian buku)
 * Kanban *Board*.
 * *Shopping Cart* sederhana (menambahkan barang ke *shopping cart* dan *calculate* jumlah barang).
 * Sistem kasir (memasukan item dan *auto calculate* total harga).
@@ -36,7 +28,3 @@ Pilihlah salah satu dari aplikasi di bawah ini:
 ## Output:
 * *File* Pseudocode
 * *File* Flowchart
-* Video
-
-## Output yang harus disubmit ke LMS:
-* *Link* Video
