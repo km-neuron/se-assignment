@@ -11,6 +11,10 @@
 * Minimal memiliki satu atau dua variable.
 * Minimal memiliki 1 conditional DAN/ATAU memiliki 1 looping.
 
+## Notes
+* File Flowchart di simpan dalam bentuk gambar (.png, .jpg, .dll)
+* File Pseudocode di simpan dalam bentuk file text (.txt)
+
 ## Directions:
 Buatlah **Pseudocode** dan **Flowchart** dari salah satu aplikasi yang disarankan dibawah.
 Untuk pembuatan flowchart pastikan mengikuti kentuan yang ada pada materi flowchat (Neurons), terutama dalam **pemilihan _shape_ yang akan digunakan**. Setelah semua file dikerjakan, **WAJIB** di upload pada **google form** yang akan di berikan oleh instruktur.
