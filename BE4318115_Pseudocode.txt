@@ -1,0 +1,22 @@
+READ AND WRITE "Nomor Antrian" with number
+READ AND WRITE "Dokumen" with object
+
+STORE "pendaftaran_pasien" with object
+ 
+PROCEDURE Pendaftaran (object)
+   STORE "pendaftaran" with object 
+END PROCEDURE
+
+CALL Pendaftaran (object)
+
+READ AND WRITE "Membuat Kartu Berobat" with object
+
+READ AND WRITE "Melakukan Pembayaran" with object 
+
+IF "melakukan_pembayaran" equals "true"
+    PRINT "Mendapatkan bangsal"
+ELSE
+    PRINT "Membuat kartu berobat"
+END IF
+
+READ AND WRITE "Mendapatkan bangsal" with object
