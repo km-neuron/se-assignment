@@ -1,0 +1,63 @@
+Begin
+pesanan
+        write ( menu makanan )   
+        write ( masukkan pesanan anda )
+        Input ( makanan )
+        read ( makanan )    
+              if ( makanan <= 0 ) OR ( makanan > 2 ) then
+                 write ( menu tdk ada )
+                 goto ( pesanan )
+            end if     
+pesanan2
+        write ( menu minuman )   
+        write ( masukkan pesanan anda )
+        input ( minuman )
+        read ( minuman )    
+              if ( minuman <= 0 ) OR ( minuman > 2 ) then
+                 Write ( menu tdk ada )
+                 goto ( pesanan2 )
+            end if     
+STORE keranjang with pesanan1 and pesanan2           
+STORE "uang" with number 100000
+STORE "pesanan1" with number 30000
+STORE "pesanan2" with number 40000
+
+if "uang" more than or equal "pesanan1 and pesanan2"
+    PRINT "membeli pesanan1 and pesanan2"
+ELSE
+    PRINT "membeli pesanan1" or "membeli pesanan2"              
+write ( jumlah pesanan anda )
+input ( jml )
+read ( jml )
+write ( harga )
+input ( hrg )
+read ( hrg )
+
+pengiriman
+         write ( apakah bersedia menunggu? )
+         write ( masukkan pilihan anda )
+         Input ( prg )
+         read ( prg )
+         if ( prg <= 0 ) OR ( prg > 2 ) then
+            write ( status pengiriman tdk ada )
+            goto ( pengiriman ) 
+         end if
+
+If isYes equal to True then
+    STORE isConfirm with True
+    STORE orderStatus with "cooking" keranjang
+
+    while orderStatus equal to "cooking" do
+        if orderStatus equal to "cooking" then
+             STORE orderStatus with "cooked"
+
+STORE orderStatus with "dalam pengiriman"
+
+while orderStatus equal to "dalam pengiriman" do
+     if orderStatus eequal to "dalam pengiriman" then
+     STORE orderStatus with "Pesanan di terima"
+
+Print orderStatus
+write ( total )
+print ( total )
+end     
