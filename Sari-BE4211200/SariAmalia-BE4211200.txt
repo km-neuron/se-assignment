@@ -1,0 +1,26 @@
+READ AND WRITE "grand-palace" with object
+READ AND WRITE "MBK-Center" with object
+READ AND WRITE "Wat-saket" with object
+
+while(
+STORE "day1" WITH goto(grand-palace)
+MAINPROSES: STORE "day1" WITH goto(
+grandpalace
+
+)
+IF day1 = true
+end
+ELSE day2 = false
+GO TO
+MAINPROSES: STORE "day2" WITH goto(
+MBK-CENTER
+
+ELSE day3 = false 
+STORE "day3" WITH goto(Wat-Saket)
+MAINPROSES: STORE "day3" WITH goto(
+Wat-Saket
+
+END
+FUNCTION goto
+STORE "day1, day2, day3"
+END FUNCTION
