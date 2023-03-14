@@ -1,0 +1,66 @@
+## PSEUDOCODE TODO LIST ##
+
+READ AND WRITE "title" with string
+READ AND WRITE "description" with string
+READ AND WRITE "date" with string
+READ AND WRITE "isCompleted" with boolean
+READ AND WRITE "stillHere" with boolean
+
+SET "stillHere" with TRUE
+
+WHILE "stillHere" equal TRUE 
+	DO SHOW "All Todo List"
+		IF "Do you want to add a new todo" equal TRUE
+			INPUT "title"
+			INPUT "description"
+			INPUT "date"
+			SET "isCompleted" with FALSE
+			SELECT "Save"
+			PRINT "Success add todo"
+            BACK to SHOW "All Todo List"
+		ELSE 
+            BACK to SHOW "All Todo List"
+        END
+
+        IF "Select" equal TRUE
+            SHOW "A todo detail"
+            	IF "isCompleted" equal TRUE
+                    IF "Do you want to redo" equal TRUE
+                        SET "isCompleted" with FALSE
+                        PRINT "Redo success"
+                        BACK to SHOW "All Todo List"
+                    ELSE
+                        BACK to SHOW "All Todo List"
+                    END
+
+                ELSE 
+                    IF "Do you want to complete it" equal TRUE
+                        SET "isCompleted" with TRUE
+                        PRINT "Todo completed"
+                        BACK to SHOW "All Todo List"
+                    ELSE
+                        BACK to SHOW "All Todo List"
+                    END
+
+                END
+
+                IF "Do you want to delete" equal TRUE
+                    PROCESS "Delete todo"
+                    PRINT "Todo deleted"
+                    BACK to SHOW "All Todo List"
+                ELSE 
+                    BACK to SHOW "All Todo List"
+                END
+                
+        ELSE
+            BACK to SHOW "All Todo List"
+        END
+
+        IF "Do you want to close" equal TRUE
+            SET "stillHere" with FALSE
+            PROCESS "Close APP"
+        ELSE
+            BACK to SHOW "All Todo List"
+        END
+        
+END
