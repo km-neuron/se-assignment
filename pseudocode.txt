@@ -1,0 +1,18 @@
+Deklarasi :
+pilihMenu, totalBelanja : int 
+checkout = false : boolean 
+
+Deskripsi :
+print "pesan Selamat Datang di Makan Online"
+while checkout = false, then:
+    print menu
+    input pilihMenu
+    if pilihMenu = 1, then:
+        totalBelanja <- totalBelanja + 10000
+    if not, if pilihMenu = 2, then:
+        totalBelanja <- totalBelanja + 20000
+    if not, if pilihMenu = 3, then:
+        totalBelanja <- totalBelanja + 5000
+    if not, then:
+        checkout <- true
+tampilkan pesan total belanja
