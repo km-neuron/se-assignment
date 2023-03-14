@@ -1,0 +1,20 @@
+PROGRAM Order Makanan / Minuman Online
+
+BEGIN
+ WHILE "Open Application"
+     DO "SET Ask place to take orders"
+ SEARCH Food OR Drink you want
+    IF Order is match 
+        CHOOSE Order
+    ELSE 
+        SEARCH Order
+ THEN 
+    CHOOSE payment_method
+        IF MONEY >= BILL
+            PRINT PAYMENT SUCCESSFULL
+        ELSE
+            PRINT CHOOSE payment_method
+ THEN 
+     WAITING FOR COURRIER
+     THE ORDER HAS ARRIVED
+FINISH
