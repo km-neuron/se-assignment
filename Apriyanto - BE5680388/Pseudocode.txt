@@ -1,0 +1,18 @@
+PROGRAM Hospital Admission
+
+START
+take a queue number
+
+THEN
+patient registration
+	IF new patient
+		CHOOSE Make a new MIC (Medical Identity Card) and DRM 
+	ELSE 
+		Request MIC and Admission Note
+
+THEN
+	Ask what grade do you want?
+	Getting a ward
+
+END
+			
