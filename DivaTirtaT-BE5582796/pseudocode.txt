@@ -1,0 +1,31 @@
+READ AND WRITE "angka1" with number
+READ AND WRITE "angka2" with number
+READ AND WRITE "operator" with number
+READ AND WRITE "hasil" with number
+READ AND WRITE "again" with string
+
+WHILE "again" is equal to Y
+    DO {
+        PRINT "=======WELCOME======="
+        PRINT "INPUT ANGKA PERTAMA"
+        STORE "angka1" with 3
+        PRINT "INPUT ANGKA KEDUA"
+        STORE "angka2" with 2
+        PRINT "INPUT OPERATOR 1. + 2. - 3. * 4. /"
+        STORE "operator" with 3
+
+        if "operator" is equal to "1"
+            STORE "hasil" CALCULATE "angka1" add with "angka2"
+        if "operator" is equal to "2"
+            STORE "hasil" CALCULATE "angka1" substract with "angka2"
+        if "operator" is equal to "3"
+            STORE "hasil" CALCULATE "angka1" multiply with "angka2"
+        if "operator" is equal to "4"
+            STORE "hasil" CALCULATE "angka1" divide with "angka2"
+        else
+            PRINT "Input operator tidak tersedia"
+
+        print "hasil"
+        print "again?(Y/N)"
+        STORE "again" with Y
+    }
