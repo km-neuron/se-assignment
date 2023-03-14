@@ -1,0 +1,43 @@
+PSEUDOCODE PEMESANAN MAKANAN DAN MINUMAN VIA ONLINE
+
+STORE "order" with BOOLEAN
+
+IF "order" is "food"
+	READ AND WRITE "listFoods" with LIST
+	READ AND WRITE "selectFoods" with RECORD
+
+	STORE "stockFoods" with TRUE
+
+	WHILE "false"
+		DO "selectFoods"
+
+	READ AND WRITE "calculateOrder" with NUMBER
+	STORE "selectFoods" with CALCULATE
+	READ AND WRITE "inputAddress" with STRING
+	STORE "inputAddress" with STRING
+	
+	STORE "checkSaldo" with NUMBER
+	IF "checkSaldo" > "calculateOrder"
+		STORE "payment" with NUMBER
+	ELSE
+		STORE "topupEwallet" with NUMBER
+ELSE "order" is "drink"
+	READ AND WRITE "listDrinks" with LIST
+	READ AND WRITE "selectDrinks" with RECORD
+
+	STORE "stockDrinks" with TRUE
+
+	WHILE "false"
+		DO "selectDrinks"
+
+	READ AND WRITE "calculateOrder" with NUMBER
+	STORE "selectDrinks" with CALCULATE
+	READ AND WRITE "inputAddress" with STRING
+	STORE "inputAddress" with STRING
+	
+	STORE "checkSaldo" with NUMBER
+	IF "checkSaldo" > "calculateOrder"
+		STORE "payment" with NUMBER
+	ELSE
+		STORE "topupEwallet" with NUMBER
+END
