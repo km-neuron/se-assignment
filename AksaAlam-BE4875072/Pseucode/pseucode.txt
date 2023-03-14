@@ -1,0 +1,55 @@
+Deklarasi
+Kode_barang : string
+Nama_barang : string
+Harga_satuan : integer
+Total_pembayaran : real
+Harga_pembelian : real
+Kembalian : real
+Jumlah sepatu futsal : integer
+Jumlah bola kaki : integer
+Jumlah sepatu basket : integer
+Jumlah bola basket : integer
+Jumlah total : integer
+Deskripsi
+Write "kode barang"
+Read (kode_barang)
+If kode_barang="AA1"then 
+Nama_barang   ←  "Sepatu Futsal"
+Harga_satuan   ←   300000
+Write"jumlah sepatu futsal"
+Read(jumlah_sepatu_futsal)
+Else
+Ifkode_barang="BB2"then
+Nama_barang  ← "Bola Kaki"
+Harga_satuan  ←  80000
+Write"jumlah bola_kaki"
+Read(jumlah_bola_kaki)
+Else
+Ifkode_barang="CC3"then
+Nama_barang  ←  "Sepatu Basket"
+Harga_satuan  ←   400000
+Write"jumlah sepatu basket"
+Read(jumlah_sepatu_basket)
+Else 
+Ifkode_barang="DD4"then
+Nama_barang  ←  "Bola Basket"
+Harga_satuan  ←   100000
+Write"jumlah bola basket"
+Read(jumlah_bola_basket)
+Jumlah_total   ←   jumlah_sepatu_futsal + jumlah_bola kaki + jumlah_sepatu_basket + Jumlah_bola_basket
+Harga_pembelian  ←  harga_satuan*jumlah_total
+Repeat 
+Write "Jumlah Pembayaran"
+Read(jumlah_pembayaran)
+Kembalian  ←  jumlah_pembayaran - harga_pembelian
+If Kembalian<0 then
+Write "Maaf Uang Anda Kurang"
+Else
+If kembalian>=0
+Write " Terima Kasih Sudah Berbelanja, Datang lagi yaa!"
+Write "Kode Barang"
+Write "Nama Barang"
+Write "Harga Satuan"
+Write "Jumlah Barang"
+Write "Harga Pembelian"
+Write"kembalian"
