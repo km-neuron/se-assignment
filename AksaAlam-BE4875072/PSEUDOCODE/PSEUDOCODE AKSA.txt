@@ -1,0 +1,55 @@
+Deklarasi
+Kode_barang : string
+Nama_barang : string
+Harga_satuan : integer
+Total_pembayaran : real
+Harga_pembelian : real
+Kembalian : real
+Jumlah jaket hoodie : integer
+Jumlah jam tangan : integer
+Jumlah sweater : integer
+Jumlah topi baseball : integer
+Jumlah total : integer
+Deskripsi
+Write "kode barang"
+Read (kode_barang)
+If kode_barang="AA1"then 
+Nama_barang   ←  "jaket hoodie"
+Harga_satuan   ←   300000
+Write"jumlah jaket hoodie"
+Read(jumlah_jaket_hoodie)
+Else
+Ifkode_barang="BB2"then
+Nama_barang  ← "jam tangan"
+Harga_satuan  ←  80000
+Write"jumlah jam tangan"
+Read(jumlah_jam_tangan)
+Else
+Ifkode_barang="CC3"then
+Nama_barang  ←  "sweater"
+Harga_satuan  ←   250000
+Write"jumlah sweater"
+Read(jumlah_sweater)
+Else 
+Ifkode_barang="DD4"then
+Nama_barang  ←  "topi baseball"
+Harga_satuan  ←   100000
+Write"jumlah topi baseball"
+Read(jumlah_topi_baseball)
+Jumlah_total   ←   jumlah_jaket_hoodie + jumlah_jam_tangan + jumlah_sweater + Jumlah_topi_baseball
+Harga_pembelian  ←  harga_satuan*jumlah_total
+Repeat 
+Write "Jumlah Pembayaran"
+Read(jumlah_pembayaran)
+Kembalian  ←  jumlah_pembayaran - harga_pembelian
+If Kembalian<0 then
+Write "Maaf Uang Anda Kurang"
+Else
+If kembalian>=0
+Write " Terima Kasih Sudah Berbelanja, Datang lagi yaa!"
+Write "Kode Barang"
+Write "Nama Barang"
+Write "Harga Satuan"
+Write "Jumlah Barang"
+Write "Harga Pembelian"
+Write"kembalian"
