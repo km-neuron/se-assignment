@@ -1,0 +1,22 @@
+PROGRAM LibraryBookingReturn
+
+START
+READ INPUT BookName
+FOR Book IN BookList
+  IF Book INCLUDE BookName
+    SHOW Book
+
+READ INPUT BookChoosen
+SHOW BookDetail
+
+STORE IsBooking WITH FALSE
+STORE IsReturn WITH FALSE
+
+READ INPUT IsBooking
+IF IsBooking == TRUE
+  ProcessingBooking
+ELSE 
+  READ INPUT IsReturn
+  IF IsReturn == TRUE
+    ProcessingReturning
+END
