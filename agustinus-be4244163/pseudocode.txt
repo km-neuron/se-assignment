@@ -1,0 +1,20 @@
+PROGRAM FoodOrderOnline
+
+// todo: add your pseudocode for online food order
+START
+SEARCH food 
+    IF food is match 
+        CHOOSE food
+    ELSE 
+        SEARCH food
+THEN 
+    CHOOSE method_payment
+        IF balance >= bill
+            PAYMENT SUCCESS
+        ELSE
+            CHOOSE method_payment
+THEN 
+    WAITING FOR COURRIER
+    THE ORDER HAS ARRIVED
+FINISH
+
