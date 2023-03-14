@@ -1,0 +1,29 @@
+START
+
+DECLARE umur INTEGER
+DECLARE asuransiKesehatan BOOLEAN
+DECLARE keepChecking BOOLEAN
+
+SET keepChecking = TRUE
+
+PRINT "Selamat Datang di Rumah Sakit Dr.Soetomo"
+
+WHILE keepChecking == TRUE DO
+    INPUT umur
+    INPUT asuransiKesehatan
+
+    IF age >= 20 AND hasInsurance == TRUE THEN
+        PRINT "Anda memenuhi persyaratan untuk masuk rumah sakit"
+    ELSE
+        PRINT "Anda tidak memenuhi persyaratan untuk masuk rumah sakit"
+    ENDIF
+    
+    PRINT "Apakah anda ingin memeriksa pasien lain ? (Y/N)"
+    INPUT answer
+    
+    IF answer == "N" THEN
+        SET keepChecking = FALSE
+    ENDIF
+ENDWHILE
+
+END
