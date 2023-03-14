@@ -1,0 +1,136 @@
+Program Shopping Cart
+
+Start (Begin)
+
+OPEN Apps
+    READ AND WRITE "barang" with string
+INPUT "barang"
+    READ "barang"
+    PRINT "barang" with object
+    PRINT "price" with number
+
+    WHILE "barang" < 0
+    DO {if (barang < 0) THEN
+        STORE "barang" with object AND WRITE "<barang telah dimasukan kedalam keranjang>"
+        end if
+    }
+    
+CART 
+
+GOTO Cart
+    PRINT "barang"
+    PRINT "price" with number
+    PRINT "jumlah" with number "1"
+    PROCEDURE addJumlah ("jumlah")
+        store "result" with jumlah
+        IF 
+            user ADD x "jumlah" THEN 
+            "jumlah" SWAP to x + 1 
+            WRITE "<Jumlah ditambah>"
+            INPUT "price"*"jumlah" with "total_price"
+            READ "total_price"
+            WRITE "total_price"
+            STORE "total_price"
+        Else
+            "jumlah"
+    END PROCEDURE
+    AND
+        IF 
+            user DELETE "barang"
+            THEN WRITE "<Barang telah di hapus>"
+        end if
+
+CHECKOUT
+
+    checkout
+    PRINT "saldo" with number <SALDO ACCOUNT>
+        IF 
+            READ saldo >= "total_price" THEN
+            WRITE "Bayar <barang> - <total_price> dengan saldo Account"
+            PRINT "Sudah terbayar" with success
+            STORE success
+            AND GOTO "delivery".
+
+        ELSE 
+            READ saldo <= "total_price" THEN
+            WRITE "saldo tidak mencukupi"
+            GOTO payment_gateway
+        ENDIF
+
+PAYMENT GATEWAY
+
+    IF
+        checkout SAY "payment_gateway"
+        GOTO payment_gateway
+        CHOOSE payment_methode AND WRITE "Pilih metode pemnbayaran"
+        READ payment_methode
+        PRINT va_payment_methode
+            FUNCTION bayarNih (number)
+                STORE "result" with "number"
+                AND WRITE "DONE PAYMENT"
+                RETURN "result"
+            END FUNCTION
+        STORE "success" with success
+        GOTO "checkout"
+    ELSE
+        READ "success" != true 
+        END
+        GOTO cart
+
+DELIVERY
+
+    IF 
+        checkout say "success"
+        READ "barang"
+        READ "total_price"
+        READ "jumlah"
+        STORE "barang"
+        STORE "total_price"
+        STORE "jumlah"
+        WRITE "barang"
+        WRITE "total_price"
+        WRITE "jumlah"
+        PRINT "faktur" with "barang" ; "total_price" ; "jumlah"
+        STORE sent with True
+        WRITE "<Barang sedang dalam perjalanan ke alamat tujuan>"
+    ELSE 
+        checkout say "success" != true
+        END
+        GOTO Cart
+    ENDIF
+
+KONFIRMASI
+    IF
+        DELIVERY SAY "delivered"
+        konfirmasi_pemesanan = TRUE
+        PRINT "<Barang telah sampai di tempat tujuan>"
+        PRINT "<TERIMAKASIH SUDAH BERBELANJA DI SHOPPMART>"
+        GOTO END section
+    ELSEIF
+        DELIVERY SAY "delivered"
+        konfirmasi_pemesanan != TRUE
+        READ "konfirmasi_pemesanan"
+        write "konfirmasi_pemesanan" with reture
+        READ "reture"
+        WRITE "reture" with TRUE
+        PRINT "reture"
+        USER reture "barang"
+        konfirmasi_pemesanan = DONE
+            PROCEDURE konfirmasi_pemesanan (saldo, saldo_kembali)
+            STORE "saldo_reture" with saldo + saldo kembali
+            PRINT "saldo_reture"
+            END PROCEDURE
+        print "saldo_reture" with number
+        READ "saldo_reture"
+    ELSEIF
+        saldo_reture equal saldo
+        WRITE "RETURE DONE"
+        PRINT "RETURE DONE"
+        PRINT "<TERIMAKASIH SUDAH BERBELANJA DI SHOPPMART>"
+        END section
+    ELSE
+        saldo_reture != saldo
+        END GOTO CS
+        ENDIF
+    ENDIF
+
