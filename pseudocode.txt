@@ -1,0 +1,47 @@
+READ AND WRITE "title" with string
+READ AND WRITE "detail" with string
+READ AND WRITE "stillhere" with bolean
+
+SET "stillhere" = TRUE
+
+WHILE "stillhere" == TRUE DO
+	IF add 
+		INPUT "title" 
+		INPUT "detail" 
+		PRINT "Save data? Y/N"
+		INPUT answer
+		IF answer == "Y"
+			PRINT "Success Add Data"
+		ELSE
+			Back to Form
+		ENDIF
+	ELSE IF select 
+		IF update
+			INPUT check
+			PRINT "Mark as Done? Y/N"
+			INPUT answer
+			IF answer == "Y"
+				PRINT "Saving Data"
+			ELSE
+				Back to Home
+			ENDIF
+		ELSE IF delete
+			PRINT “Are You Sure to Delete This? Y/N”
+			INPUT answer
+			IF answer == "Y"
+				PRINT "Deleting Data"
+			ELSE
+				Back to Home
+			ENDIF
+		ELSE
+			Back to Home
+		ENDIF
+	ESLE IF close 
+		PRINT "Close the App? Y/N"
+		IF answer == "Y"	
+			SET "stillhere" = FALSE
+		Else
+			Back to Home
+		ENDIF
+	ENDIF
+ENDWHILE 
