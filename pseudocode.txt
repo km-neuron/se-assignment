@@ -1,0 +1,31 @@
+Declaration:
+    select_restaurant, payment_method, checkout, menu, restaurant_list = record
+    quantity, cart, pay = number
+    ordering = boolean
+    gopay, cash, jago = String
+BEGIN
+    FUNCTION select_restaurant()
+        READ selected "restaurant_list"
+        READ selected "menu"
+        READ AND WRITE "quantity" with number
+            IF ("ordering" == TRUE)
+                SET "cart" with "quantity"
+            ELSE
+                CALL select_restaurant()
+            END IF
+    END FUNCTION
+    
+    CALL select_restaurant()
+    READ Selected "checkout"
+    READ AND WRITE "payment_method" with String
+        IF ("gopay" == TRUE)
+            SET "pay" with number
+            SET "cart" with null
+        ELSE IF ("cash" == TRUE)
+            SET "pay" with number
+            SET "cart" with null
+        ELSE ("jago" == TRUE)
+            SET "pay" with number
+            SET "cart" with null
+        END IF
+END
