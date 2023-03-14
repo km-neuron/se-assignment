@@ -1,0 +1,40 @@
+Program Order Makanan/Minuman Online
+READ AND WRITE "Gadget" with object
+
+START
+WHILE "Open application"
+    DO "SET ask for the name and address of the customer"
+SEARCH Food OR Drink you want
+    IF Order is on the list
+        CHOOSE Order
+    ELSE 
+        SEARCH Order
+THEN 
+    CHOOSE Promo
+        IF "Promo" equals "true"
+            Print "Used promo"
+        ELSE 
+            Print "No Promo"
+THEN
+    CHOOSE Method Payment
+        IF "direct payment" equals "true"
+            Print "Direct Payment"
+        ELSE
+            Print "Payment via online"
+THEN
+    SEARCH Courier
+        IF "Courier" equals "true"
+            Print "Get Courier"
+        ELSE
+            SEARCH Courier
+THEN
+    ORDER HAS ARRIVED
+    ORDER HAS BEEN RECEIVED
+FINISH
+
+    
+            
+
+
+        
+
