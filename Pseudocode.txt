@@ -1,0 +1,29 @@
+
+book_id tipe data integer
+book_status tipe data string
+borrower_id tipe data integer
+
+
+START
+  INPUT "Apakah Anda ingin meminjam atau mengembalikan buku?" as choice
+  IF choice equals "meminjam" THEN
+    INPUT "Masukkan ID buku yang ingin dipinjam" as book_id
+    IF book_id available in library THEN
+      SET book_status to "dipinjam"
+      INPUT "Masukkan ID peminjam" as borrower_id
+      SET borrower_id as borrower of book_id
+      PRINT "Buku berhasil dipinjam"
+    ELSE
+      PRINT "Buku tidak tersedia"
+    ENDIF
+  ELSE IF choice equals "mengembalikan" THEN
+    INPUT "Masukkan ID buku yang ingin dikembalikan" as book_id
+    IF book_id borrowed by any borrower THEN
+      SET book_status to "tersedia"
+      SET borrower of book_id to null
+      PRINT "Buku berhasil dikembalikan"
+    ELSE
+      PRINT "Buku tidak sedang dipinjam"
+    ENDIF
+  ENDIF
+STOP
