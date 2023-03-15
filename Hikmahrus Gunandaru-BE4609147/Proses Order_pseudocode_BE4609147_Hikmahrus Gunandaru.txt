@@ -1,0 +1,55 @@
+Pseudocode Order Makanan/Minuman Online
+BE4609147_Hikmahrus Gunandaru
+
+READ AND WRITE "menu" with object
+READ AND WRITE "menuName" with string
+READ AND WRITE "accountName" with string
+
+IF "accountName" is exist
+	PROCESS login
+ELSE
+	PRINT "silahkan buat akun terlebih dahulu"
+	LOAD register page	
+
+
+IF login process is complete
+	LOAD mainPage
+	SEARCH "menuName"
+
+	IF "menuName" is exist
+		LOAD resultPage
+		IF button add to cart clicked
+			ADD menu into cart
+			IF looking for another menu
+				SEARCH another "menuName"
+			ELSE
+				CALL BuyMenu(cart)
+		ELSE
+			LOAD buyingPage
+			PRINT menu.name
+			PRINT menu.price
+			CALL BuyMenu(menu)
+	ELSE
+		print "menu tidak ada"
+FINISH
+
+
+FUNCTION BuyProcess (menu)
+	LOAD paymentPage
+	PRINT "pilih metode pembayaran"
+	CHOOSE payment method
+
+	IF "direct payment"
+		PRINT "Direct payment chosen"
+		OPTIONAL INPUT promo code
+		PROCESS order
+	ELSE
+		PRINT "Online payment"
+		OPTIONAL INPUT promo code
+		PROCESS order
+
+
+
+
+
+
