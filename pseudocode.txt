@@ -1,0 +1,30 @@
+Program FoodOrder
+
+Begin
+Read Application
+Call OpenApp
+Call FindMenu
+Call FindRestaurant
+
+While Findmenu=False
+Store Foodfound with Findmenu
+
+Call ChoseMenu
+Read OrderQuantity
+Read Orderaddress
+Call PayMethod
+
+If Paymethod = Cash
+Store OrderList
+Store OrderWait
+Store OrderArrive
+Store Storecash With courier
+
+Else
+Call NonCashMethod
+Read AccountNumber
+Store OrderList
+Store OrderWait
+Store OrderArrive
+
+End
