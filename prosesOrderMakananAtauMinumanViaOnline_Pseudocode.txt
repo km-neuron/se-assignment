@@ -1,0 +1,23 @@
+START
+
+OPEN the foodOrBeverages ordering application
+DISPLAY the home page
+
+SEARCH FOR available food or beverages
+DISPLAY the search page
+SELECT the foodOrBeverages to be ordered
+
+IF "user" wants to buy
+	IF "Yes" 
+		PROCEED to payment check out. 
+	If "No"
+		DISPLAY the search page
+
+Select the payment method
+
+IF "check out payment" is successful
+	If "Yes"
+		DISPLAY the check out result. 
+	If "No"
+		DISPLAY the payment method
+END
