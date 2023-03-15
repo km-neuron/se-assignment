@@ -1,0 +1,50 @@
+PSEUDOCODE
+READ AND WRITE "Tambahtugas" with string
+READ AND WRITE "Judul" with string
+READ AND WRITE "Isi" with string	
+READ AND WRITE "Hasiltambah" with string
+READ AND WRITE "Tampiltugas" with string
+READ AND WRITE "Hapustugas" with string
+READ AND WRITE "stillhere" with boolean
+
+SET "stillhere" with TRUE
+WHILE “stillhere” equal TRUE
+	DO “Tampiltugas”
+	   IF “Tambahtugas” equal TRUE
+		STORE “Judul”
+		STORE “Isi”
+		PRINT “Simpan Data? Ya/Tidak”
+			IF jawaban == “Ya”
+			   	PRINT “Hasiltambah”
+			   BACK to SHOW “Tampiltugas”
+			ELSE
+			   BACK to SHOW "Tampiltugas"
+			ENDIF
+	   ELSE 
+	   	IF “Hapustugas” equal TRUE
+		  PRINT “Anda Ingin Menghapus Tugas?”
+			IF jawaban == “Ya”
+			SHOW “Detail Tugas”
+				PRINT “Anda Yakin Menghapus tugas ini?
+			   IF jawaban == “Ya”
+				  PRINT “Menghapus Tugas”
+				BACK to SHOW “Tampiltugas”
+			   ELSE
+				BACK to SHOW “Tampiltugas”
+			   ENDIF
+
+			ELSE
+				BACK to SHOW Tampiltugas"
+		ENDIF 
+		ELSE
+		    IF “Keluar”	equal TRUE
+			PRINT “Keluar Dari Aplikasi?Ya/Tidak”
+				IF jawaban == “Ya”
+					SET “stillhere” with False
+				ELSE
+					Back To Show “Tampiltugas”
+				ENDIF
+		     ENDIF
+ENDWHILE
+					
+
