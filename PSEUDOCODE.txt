@@ -1,0 +1,19 @@
+PEMESANAN MAKANAN MINUMAN VIA ONLINE 
+
+
+START
+IF"ORDER" IS "MINUMAN"
+READ AND WIRITE "LIST minuman" with list 
+READ AND WIRITE"pilih minuman " with ricord
+
+STORE "stok minuman " with TRUE
+
+WHILE "fales"
+    do"pilih minuman "
+READ AND WIRITE"perhitungan minuman" with number
+STORE"pilih minuman" with caculator 
+READ AND WIRITE" input alamat"with string 
+STORE "input anddres"with string 
+
+Proses pengiriman
+Selesai
