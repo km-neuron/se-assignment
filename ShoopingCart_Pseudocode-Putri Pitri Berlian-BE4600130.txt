@@ -1,0 +1,65 @@
+// Proses menambhakan dan menghitung jumlah barang (shopping cart)
+
+READ and WRITE "Username" with string
+READ and WRITE "Password" with string
+READ and WRITE "Masuk" with boolean
+READ and WRITE "Pencarian" with string
+READ and WRITE "DaftarBarang" with array to string
+READ and WRITE "Barangdipilih" with list
+READ and WRITE "TambahBarang" with string
+READ and WRITE "MenghitungJumlahBarang" with list of number
+READ and WRITE "TambahPesanan" with string
+READ and WRITE "AlamatPengiriman" with string
+READ and WRITE "NomorTelepone" with number
+READ and WRITE "MetodePembayaran" with string
+
+STORE "Masuk" with masuk (Username, Password)
+IF "Masuk" is equal to True
+	PRINT "menu utama"
+Else
+	PRINT "anda belum memiliki akun"
+
+
+STORE "pencarian" with ["barang1"]
+STORE "DaftarBarang" with ["barang1", "barang10", "barang11", "barang12"]
+STORE "tambahPesanan" with "ya"
+STORE "lanjutPembayaran" with "ya"
+
+WHILE "lanjutPembayaran" equal "tidak"
+    WHILE "tambahPesanan" equal "ya"
+        WHILE "barang1" < length("daftarbarang")
+            DISPLAY "daftarbarang"[barang1]
+            ADD "barang1" by 1
+        END WHILE
+
+        DISPLAY "Silakan pilih barang yang tersedia:"
+        ADD "barang dipilih" with input from user
+
+        DISPLAY "pilih semua barang yang tersedia di keranjang:"
+        ADD "semua barang dipilih" with input from user
+
+        DISPLAY "menghitung jumlah barang"
+	ADD "hasil jumlah barang" with output from admin
+        STORE "tambahPesanan" with input from user
+    END WHILE
+
+    DISPLAY "Lanjut proses pembayaran? ya/tidak"
+    STORE "lanjutPembayaran" with input from user
+
+    IF "lanjutPembayaran" equal "ya"
+        CLEAR "menuDipilih"
+        CLEAR "jumlahDipilih"
+END WHILE
+
+STORE "AlamatPengiriman" with input from user
+STORE "NomorTelepon" with input from user
+STORE "MetodePembayaran" with more then or equal ["cash","onlinepay"]
+STORE "metodepembayaran" with input from user
+
+FUNCTION metodepembayaran ("metodepembayaran")
+	IF "metodepembayaran" equal "cash" or "onlinepay"
+		RETURN "berhasil"
+	ELSE
+		RETURN "gagal"
+END FUNCTION
+		
