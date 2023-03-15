@@ -1,0 +1,17 @@
+program_tambahbarang_dan_menghitung_jumlah
+
+var username, password, total_belanja
+
+input = (str("Masukan nama : ", username))
+input = (str ("Masukan password : ", password))
+
+a = total_belanja
+
+input (a);
+if ( a >= 40) then 
+	output ("Selamat kamu mendapatkan gratis ongkir")
+else
+	output ("Minimal belanja 40 ribu untuk mendapatkan gratis ongkir")
+
+
+ 
