@@ -1,0 +1,56 @@
+PROGRAM SHOPPING CART
+
+DECLARE TYPE "cart" : record
+    "pName" string
+    "pPrice" number
+    "pAmount" number
+    "pSubTotal" number
+
+READ AND WRITE "username" with string
+READ AND WRITE "password" with string
+
+STORE "isSession" with TRUE
+STORE "size" by 0
+
+WHILE "isSession" is TRUE
+    READ AND WRITE "command" with string
+
+    IF "command" equals "add product"
+        READ AND WRITE "cart"["size"]."pName" with string
+        READ AND WRITE "cart"["size"]."pPrice" with number
+        READ AND WRITE "cart"["size"]."pAmount" with number
+        STORE "cart"["size"]."pSubTotal" by "cart"["size"]."pPrice" times "cart"["size"]."pAmount"
+        ADD "size" by 1
+        
+    ELSE IF "command" equals "checkout"
+        IF "size" equals 0
+            PRINT "Cart is empty"
+        ELSE
+            STORE "i" with 0
+            STORE "totalPrice" with 0
+       
+            WHILE "i" < "size"
+                PRINT "cart"["i"]."pName"
+                PRINT "cart"["i"]."pPrice"
+                PRINT "cart"["i"]."pAmount"
+                PRINT "cart"["i"]."pSubTotal"
+                ADD "totalPrice" by "cart["i"].pSubTotal"
+                ADD "i" by 1
+            END WHILE
+            
+            PRINT "Total items in Cart: "size" "
+            PRINT "Total Price: "totalPrice" "
+        END IF
+        
+        READ AND WRITE "comms" with string
+        
+        
+        IF "comms" equals "proceed checkout"
+            PRINT "Checkout successful!"
+            STORE "isSession" with FALSE
+        ELSE
+            CONTINUE
+        
+        END IF
+    END IF
+END WHILE
