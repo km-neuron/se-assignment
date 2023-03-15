@@ -1,0 +1,76 @@
+BEGIN
+    // Inisialisasi variabel
+    total_harga = 0
+    item = ""
+    pilihan_pembelian = ""
+    nomor_item = 0
+    jumlah_item = 0
+    pilihan_tambah_item = ""
+    uang_pembayaran = 0
+    kembalian = 0
+
+    // Melihat daftar item beserta harga
+    PRINT "Daftar Item: "
+    PRINT "1. Item A (Rp 10.000)"
+    PRINT "2. Item B (Rp 15.000)"
+    PRINT "3. Item C (Rp 20.000)"
+    
+    // Penawaran pembelian
+    PRINT "Apakah anda ingin membeli item? (y/n)"
+    INPUT pilihan_pembelian
+
+    WHILE pilihan_pembelian == "y" DO
+        // Input nomor item
+        PRINT "Masukkan nomor item yang ingin dibeli:"
+        INPUT nomor_item
+
+        // Input jumlah item
+        PRINT "Masukkan jumlah item yang ingin dibeli:"
+        INPUT jumlah_item
+
+        // Menghitung total harga
+        IF nomor_item == 1 THEN
+            total_harga = total_harga + 10000 * jumlah_item
+            item = item + "Item A (" + jumlah_item + "x)"
+        ELSE IF nomor_item == 2 THEN
+            total_harga = total_harga + 15000 * jumlah_item
+            item = item + "Item B (" + jumlah_item + "x)"
+        ELSE IF nomor_item == 3 THEN
+            total_harga = total_harga + 20000 * jumlah_item
+            item = item + "Item C (" + jumlah_item + "x)"
+        END IF
+
+        // Tambah item
+        PRINT "Apakah anda ingin menambah item? (y/n)"
+        INPUT pilihan_tambah_item
+        IF pilihan_tambah_item == "y" THEN
+            CONTINUE
+        ELSE
+            // Masukan uang pembayaran
+            PRINT "Masukkan uang pembayaran:"
+            INPUT uang_pembayaran
+
+            // Kembalian
+            kembalian = uang_pembayaran - total_harga
+            IF kembalian < 0 THEN
+                // Uang pembayaran kurang
+                PRINT "Uang pembayaran kurang. Silahkan masukkan uang yang cukup."
+                CONTINUE
+            ELSE
+                // Cetak bukti pembayaran
+                PRINT "-----------------------------"
+                PRINT "       Bukti Pembayaran      "
+                PRINT "-----------------------------"
+                PRINT "Item yang dibeli: " + item
+                PRINT "Total harga: Rp " + total_harga
+                PRINT "Uang pembayaran: Rp " + uang_pembayaran
+                PRINT "Kembalian: Rp " + kembalian
+                PRINT "-----------------------------"
+                BREAK
+            END IF
+        END IF
+    END WHILE
+
+    // Selesai
+    PRINT "Terima kasih telah berbelanja."
+END
