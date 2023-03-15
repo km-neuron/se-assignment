@@ -6,9 +6,6 @@ DECLARE TYPE "cart" : record
     "pAmount" number
     "pSubTotal" number
 
-READ AND WRITE "username" with string
-READ AND WRITE "password" with string
-
 STORE "isSession" with TRUE
 STORE "size" by 0
 
@@ -34,7 +31,7 @@ WHILE "isSession" is TRUE
                 PRINT "cart"["i"]."pPrice"
                 PRINT "cart"["i"]."pAmount"
                 PRINT "cart"["i"]."pSubTotal"
-                ADD "totalPrice" by "cart["i"].pSubTotal"
+                ADD "totalPrice" by "cart"["i"]."pSubTotal"
                 ADD "i" by 1
             END WHILE
             
