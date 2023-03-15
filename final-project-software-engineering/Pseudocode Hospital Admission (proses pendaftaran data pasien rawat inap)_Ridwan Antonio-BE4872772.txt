@@ -1,0 +1,14 @@
+Start
+
+Input data pasien (nama, alamat, tanggal lahir, jenis kelamin, dsb)
+
+IF pasien sudah terdaftar THEN
+    PRINT "pasien sudah terdaftar"
+
+ELSE
+    Input data tambahan (keluhan, riwayat penyakit, dsb)
+    Simpan data pasien dan data tambahan ke dalam database
+    tampilkan pesan bahwa pendaftaran berhasil
+
+ENDIF
+End
