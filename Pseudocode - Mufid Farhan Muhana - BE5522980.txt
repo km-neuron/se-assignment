@@ -1,0 +1,63 @@
+// Proses order makanan/minuman via online.
+
+
+READ AND WRITE "daftarMenu" with array of string
+READ AND WRITE "menuDipilih" with list
+READ AND WRITE "jumlahDipilih" with list
+READ AND WRITE "tambahPesanan" with string
+READ AND WRITE "lanjutPembayaran" with string
+READ AND WRITE "alamatPengiriman" with string
+READ AND WRITE "metodePembayaran" with string
+
+STORE "daftarMakanan" with ["Nasi Goreng", "Mie Goreng", "Ayam Goreng", "Nasi Ayam", "Sate", "Bakso", "Es Teh Manis", "Jus Jeruk", "Jus Alpukat", "Kopi Hitam", "Air Mineral"]
+STORE "lanjutPembayaran" with "tidak"
+STORE "tambahPesanan" with "ya"
+
+
+
+WHILE "lanjutPembayaran" equal "tidak"
+    WHILE "tambahPesanan" equal "ya"
+        WHILE "index" < length("daftarMenu")
+            DISPLAY "daftarMenu"[index]
+            ADD "index" by 1
+        END WHILE
+
+        DISPLAY "Silakan pilih menu yang tersedia:"
+        ADD "menuDipilih" with input from user
+
+        DISPLAY "Masukkan jumlah yang ingin di pesan:"
+        ADD "jumlahDipilih" with input from user
+
+        DISPLAY "Ingin menambah pesanan? ya/tidak"
+        STORE "tambahPesanan" with input from user
+    END WHILE
+
+    DISPLAY "Lanjut proses pembayaran? ya/tidak"
+    STORE "lanjutPembayaran" with input from user
+
+    IF "lanjutPembayaran" equal "tidak"
+        CLEAR "menuDipilih"
+        CLEAR "jumlahDipilih"
+END WHILE
+
+WHILE MetodePembayaran("metodePembayaran") equal "gagal"
+    DISPLAY "Daftar pesanan anda:"
+    DISPLAY "menuDipilih" + "jumlahDipilih"
+
+    DISPLAY "Masukkan alamat pengiriman"
+    STORE "alamatPengiriman" with input from user
+
+    DISPLAY "Pilih metode pembayaran: COD/Gopal/M-Banking"
+    STORE "metodePembayaran" with input from user      
+END WHILE
+
+DISPLAY "Pesanan anda telah diproses dan akan dikirim ke alamat tujuan"
+
+
+
+FUNCTION MetodePembayaran("metodePembayaran")
+    IF "metodePembayaran" equal "COD" or "Gopal" or "M-Banking"
+        RETURN "berhasil"
+    else
+        RETURN "gagal"
+END FUNCTION
