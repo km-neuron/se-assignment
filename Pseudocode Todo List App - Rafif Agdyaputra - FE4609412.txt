@@ -1,0 +1,49 @@
+Todo List App
+
+Start App
+
+READ AND WRITE "tasks" with empty array
+
+START CLASS Task
+	READ AND WRITE "judul" with string
+	READ AND WRITE "deskripsi" with string
+	READ AND WRITE "status" with string
+END CLASS
+
+FUNCTION addTask (judul, deskripsi, status)
+	STORE "task" with NEW TASK(judul, deskripsi, status)
+	STORE "tasks" with "task"
+	PRINT "tasks"
+END FUNCTION
+
+FUNCTION findTask (judul)
+	FOR "data" in "tasks"
+		IF "data""judul" == "judul"
+			PRINT "data"
+		ELSE
+			PRINT None
+		END IF
+	END FOR
+END FUNCTION
+
+FUNCTION completeTask (judul)
+	STORE "task" with findTask(judul)
+	IF "task"
+		"task""status" = "complete"
+	END IF
+END FUNCTION
+
+FUNCTION removeTask (judul)
+	STORE "task" with findTask(judul)
+	REMOVE "task" with "judul" == "judul"
+	PRINT "Berhasil menghapus <judul>"
+END FUNCTION
+
+FUNTION showAllTask()
+	FOR "task" in "tasks"
+		PRINT "task""judul"
+		PRINT "task""deskripsi"
+		PRINT "task""status"
+	END FOR
+END FUNCTION
+
