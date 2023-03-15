@@ -1,0 +1,26 @@
+Pseudocode "Proses order makanan/minuman via online"
+ 
+START
+READ INPUT Nama_Restoran
+FOR Restoran IN Daftar_Restoran
+	IF Restoran INCLUDE Nama_Restoran
+		SHOW Restoran
+ 
+READ INPUT Restoran_dipilih
+SHOW MenuRestoran WHERE Restoran = Restoran_dipilih
+ 
+WHILE UserNotFinish
+	READ INPUT Menu_dipilih
+	ADD Menu_dipilih To Cart
+ 
+READ INPUT Alamat_Pengguna
+SHOW Tagihan
+Tagihan_dibayar = FALSE
+ 
+WHILE Tagihan_dibayar NOT TRUE
+	READ INPUT Metode_Pembayaran
+	READ INPUT Pembayaran
+	IF Pembayaran IS VALID
+		Tagihan_dibayar = TRUE
+		Pengiriman_diproses
+END
