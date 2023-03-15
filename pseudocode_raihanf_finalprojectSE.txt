@@ -1,0 +1,98 @@
+<-- Raihan Ferdyanza FE5235894 -->
+<-- Final Project - Hospital Admission -->
+
+PROGRAM HospitalAdmission_RaihanFerdyanza
+
+Declaration
+READ AND WRITE "nama_pasien" with string
+READ AND WRITE "keterangan_sakit" with string
+READ AND WRITE "jenis_kelamin" with string
+READ AND WRITE "alamat" with string
+READ AND WRITE "gol_darah" with string
+READ AND WRITE "pekerjaan" with string
+READ AND WRITE "jenis_kelamin" with string
+READ AND WRITE "tgl_masuk" with string
+READ AND WRITE "jenis_pasien" with string
+READ AND WRITE "status_pasien" with number
+READ AND WRITE "pil_status" with number
+READ AND WRITE "nik" with number
+READ AND WRITE "umur" with number
+READ AND WRITE "no_kamar" with number
+READ AND WRITE "bangsal" with number
+READ AND WRITE "no_pasien" with number
+READ AND WRITE "status" with boolean
+
+
+PRINT "Masukkan Nomor Antrian Pasien"
+INPUT "no_pasien"
+PRINT "Masukkan tanggal masuk pasien"
+INPUT "tgl_masuk"
+PRINT "Masukkan nama pasien"
+INPUT "nama_pasien"
+PRINT "Masukkan umur pasien"
+INPUT "umur"
+
+IF "umur" is <= 5
+  STORE "jenis_pasien" with "Pasien Balita"
+ELSE IF "umur" is >= 6 and <= 13
+  STORE "jenis_pasien" with "Pasien Anak"
+ELSE IF "umur" is >= 14 and <= 20
+  STORE "jenis_pasien" with "Pasien Remaja"
+ELSE IF "umur" is >= 21 and <= 45
+  STORE "jenis_pasien" with "Pasien Dewasa"
+ELSE
+  STORE "jenis_pasien" with "Pasien Lansia"
+
+PRINT "Masukkan jenis kelamin pasien"
+INPUT "jenis_kelamin" 
+PRINT "Masukkan golongan darah pasien"
+INPUT "gol_darah" 
+PRINT "Masukkan nomor nik pasien"
+INPUT "nik" 
+PRINT "Masukkan alamat pasien"
+INPUT "alamat"
+PRINT "Masukkan keterangan sakit pasien"
+INPUT "keterangan_sakit" 
+PRINT "Masukkan nomor status pasien (1)sakit parah (2)sakit menengah (3)sakit ringan"
+INPUT "pil_status"
+
+STORE "status" with FALSE
+WHILE status is FALSE
+   DO
+    IF "pil_status" is 1
+	STORE "status_pasien" with "Sakit Parah"
+	STORE "bangsal" with "Bangsal-Intensif"
+        PRINT "Pasien Akan Diarahkan Menuju Kamar Rawat di Bangsal-Intensif"
+	PRINT "Masukkan Nomor Kamar Rawat yang Tersedia"
+	INPUT no_kamar
+	STORE "status" with TRUE
+    ELSE IF "pil_status" is 2
+        STORE "status_pasien" with "Sakit Menengah"
+	STORE "bangsal" with "Bangsal Dahlia"
+        PRINT "Pasien Akan Diarahkan Menuju Kamar Rawat di Bangsal Dahlia"
+	PRINT "Masukkan Nomor Kamar Rawat yang Tersedia"
+	INPUT no_kamar
+	STORE "status" with TRUE
+    ELSE IF "pil_status" is 3
+        STORE "status_pasien" with "Sakit Ringan"
+	STORE "bangsal" with "Bangsal Edelweis"
+        PRINT "Pasien Akan Diarahkan Menuju Kamar Rawat di Bangsal Edelweis"
+	PRINT "Masukkan Nomor Kamar Rawat yang Tersedia"
+	INPUT no_kamar
+	STORE "status" with TRUE
+    ELSE
+        PRINT "Harap Memasukkan Input Sesuai Pilihan"
+END LOOP
+
+PRINT "Berikut Data Pasien Rawat Inap"
+PRINT "no_pasien"
+PRINT "nama_pasien"
+PRINT "jenis_pasien"
+PRINT "umur"
+PRINT "jenis_kelamin"
+PRINT "nik"
+PRINT "alamat"
+PRINT "keterangan_sakit"
+PRINT "Berikut Data Tempat Pasien Rawat Inap"
+PRINT "bangsal"
+PRINT "no_kamar"
