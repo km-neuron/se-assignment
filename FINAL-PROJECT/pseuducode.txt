@@ -1,0 +1,47 @@
+START PROGRAM SistemPencatatanKasir
+
+READ ADN WRITE "pilihan" with number
+READ ADN WRITE "HargaBarang" with number
+READ ADN WRITE "jumlahBarang" with number
+READ ADN WRITE "total" with number
+READ ADN WRITE "Kembalian" with number
+READ ADN WRITE "bayar" with number
+
+FUNCTION main()
+    PRINT "
+    "   1. Tas 
+        2. Sepatu 
+        3. Baju 
+        0. Total"
+
+        "Memilih nomor menu: "
+    "
+    STORE "pilihan" with number
+
+    IF "pilihan" == 1:
+        HargaBarang(100000)
+    ELSE IF "pilihan" == 2:
+        HargaBarang(150000)
+    ELSE IF "pilihan" == 3:
+        HargaBarang(5000)
+    ELSE:
+        Total()
+
+FUNCTION HargaBarang(barang):
+    PRINT "Jumlah Barang"
+    STORE "HargaBarang" with "barang"
+    STORE "JumlahBarang" with number
+    IF "JumlahBarang" > 0:
+        STORE "Total"with CALCULATE "Total" plus "JumlahBarang" times "HargaBarang"
+        main()
+    ELSE:
+        HargaBarang(barang)
+
+FUNCTION Total
+    PRINT "Total Harga Belanjaan Andalah: "+ "Total"
+    STORE "bayar" with number
+    STORE "Kembalian" with CALCULATE "Total" minus "Kembalian"
+    PRINT "Terimakasih atas kunjungan anda, Kembalian :" + "Kembalian"
+END FUNCTION
+
+main()
