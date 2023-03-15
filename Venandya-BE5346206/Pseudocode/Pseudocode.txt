@@ -1,0 +1,24 @@
+//PROGRAM Hospital Admission (Proses Pendaftaran Pasien)
+
+START
+
+READ and WRITE "nama" with string
+READ and WRITE "alamat" with string
+READ and WRITE "no.HP" with number
+READ and WRITE "no.kartu berobat" with number
+READ and WRITE "registered" with string
+READ and WRITE "sudah pernah berobat" with array bolean
+READ and WRITE "punya kartu BPJS" with array bolean
+READ and WRITE "no.kartu BPJS" with number
+
+STORE "isSignedup" with signup(nama, alamat, no.HP)
+STORE "punya kartu BPJS
+
+IF "sudah pernah berobat" is equal to False
+	STORE "registered" with "isSignedup"
+ELSE
+	INPUT "no.kartu berobat"
+	IF "punya kartu BPJS" is equal True
+		INPUT "no.kartu BPJS"
+
+END
