@@ -1,0 +1,43 @@
+Pseucode Proses order makanan/minuman via online
+
+START
+
+READ "Open aplication"
+DISPLAY home page
+
+READ Open menu "food and drink"
+DISPLAY food and drink menu
+
+READ "Choose item"
+DO add item to cart
+
+READ "Checkout"
+DISPLAY confirmation and billing menu
+
+
+IF Adress is correct
+	Add adress
+ELSE
+	Write the address according to where the food is received
+THEN
+	Add adress
+	
+
+IF Payment is cash
+	Order now
+ELSE
+	Displays the payment method options
+THEN 
+	Choose payment metode
+
+
+READ Order now
+DO Process Order
+
+Order arrived
+
+END
+
+
+
+
