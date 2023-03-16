@@ -1,0 +1,97 @@
+DECLARE daftar_menu AS ARRAY OF ITEM
+DECLARE keranjang AS ARRAY OF ITEM
+DECLARE pengguna AS OBJECT
+DECLARE riwayat_transaksi AS ARRAY OF TRANSAKSI
+DECLARE aktif AS BOOLEAN
+
+FUNCTION tampilkan_menu()
+    FOR EACH item IN daftar_menu DO
+        DISPLAY item.nama, item.harga
+    END FOR
+END FUNCTION
+
+FUNCTION tambahkan_ke_keranjang(item)
+    ADD item TO keranjang
+END FUNCTION
+
+FUNCTION hapus_dari_keranjang(item)
+    IF item IN keranjang THEN
+        REMOVE item FROM keranjang
+    ELSE
+        DISPLAY "Item tidak ditemukan di keranjang"
+    END IF
+END FUNCTION
+
+FUNCTION hitung_total()
+    DECLARE total AS INTEGER
+    SET total = 0
+    FOR EACH item IN keranjang DO
+        SET total = total + item.harga
+    END FOR
+    RETURN total
+END FUNCTION
+
+FUNCTION checkout()
+    DISPLAY "Total belanja:", hitung_total()
+    DISPLAY "Masukkan alamat pengiriman:"
+    READ pengguna.alamat
+    DISPLAY "Masukkan nomor telepon:"
+    READ pengguna.nomor_telepon
+    DISPLAY "Pesanan Anda akan segera diproses dan diantar ke alamat", pengguna.alamat
+    EMPTY keranjang
+    tambahkan_transaksi(riwayat_transaksi, pengguna, hitung_total())
+END FUNCTION
+
+FUNCTION tambahkan_transaksi(transaksi, pengguna, total_harga)
+    DECLARE tgl_transaksi AS DATE
+    SET tgl_transaksi = CURRENT_DATE
+    DECLARE no_transaksi AS INTEGER
+    SET no_transaksi = GENERATE_NO_TRANSAKSI()
+    ADD {no_transaksi, pengguna, tgl_transaksi, total_harga} TO transaksi
+END FUNCTION
+
+FUNCTION GENERATE_NO_TRANSAKSI()
+    DECLARE no_transaksi AS INTEGER
+    SET no_transaksi = RANDOM(1000, 9999)
+    FOR EACH t IN riwayat_transaksi DO
+        IF t.no_transaksi = no_transaksi THEN
+            RETURN GENERATE_NO_TRANSAKSI()
+        END IF
+    END FOR
+    RETURN no_transaksi
+END FUNCTION
+
+FUNCTION lihat_riwayat_transaksi()
+    FOR EACH t IN riwayat_transaksi DO
+        DISPLAY t.no_transaksi, t.tgl_transaksi, t.pengguna.nama, t.total_harga
+    END FOR
+END FUNCTION
+
+FUNCTION keluar()
+    aktif = FALSE
+END FUNCTION
+
+FUNCTION main()
+    aktif = TRUE
+    READ daftar_menu FROM DATABASE
+    WHILE aktif DO
+        DISPLAY "Selamat datang di sistem pemesanan makanan online!"
+        DISPLAY "1. Tampilkan Menu"
+        DISPLAY "2. Tambahkan ke Keranjang"
+        DISPLAY "3. Hapus dari Keranjang"
+        DISPLAY "4. Checkout"
+        DISPLAY "5. Lihat Riwayat Transaksi"
+        DISPLAY "6. Keluar"
+        READ pilihan
+        IF pilihan = 1 THEN
+            tampilkan_menu()
+        ELSE IF pilihan = 2 THEN
+            DISPLAY "Masukkan nama item yang ingin ditambahkan ke keranjang:"
+            READ nama_item
+            FOR EACH item IN daftar_menu DO
+                IF item.nama = nama_item THEN
+                    tambahkan_ke_keranjang(item)
+                    DISPLAY "Item telah ditambahkan ke keranjang"
+                    EXIT FOR
+                END IF
+            END FOR
