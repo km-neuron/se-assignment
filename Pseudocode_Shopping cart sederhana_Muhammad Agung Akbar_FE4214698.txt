@@ -1,0 +1,49 @@
+Algoritma Shopping Cart sederhana (menambahkan barang ke shopping cart dan calculate jumlah barang) :
+1.Customer mencari nama produk yang diinginkan 
+2.Sistem melakukan proses pemindahan produk 
+3.Jika produk tersedia didalam aplikasi maka Menampilkan list produk berdasarkan input user 
+4.Jika produk tidak tersedia,kembali kelangkah ke-1
+5.Customer memilih produk yang di inginkan 
+6.Customer memilih jumlah quantity produk yang akan dibeli
+7.Sistem menambahkan kedalam Shopping cart
+8.Sistem menampilkan hasil produk yang dipilih dan jumlah quantity beserta harga yang harus dibayarkan 
+
+
+
+Pseudocode
+Program Shopping cart Shopping Cart sederhana (menambahkan barang ke shopping cart dan calculate jumlah barang).
+
+START 
+READ INPUT ProductName
+
+ProductName = TRUE
+IF ProductName IS TRUE 
+		ProductName = TRUE
+		SHOW ListofProduct
+
+ProductName = FALSE 
+		WHILE ProductName NOT TRUE
+			READ INPUT ProductName
+
+WHILE UserNotFinish
+	READ INPUT SelectedProduct
+	SHOW ProductName WHERE Product = SelectedProduct
+
+	READ INPUT AmountsofSelectedProduct
+
+AmountofSelectedProduct = B , PriceofSelectedProduct = C
+	
+		IF (B ≥ 1)
+			PRINT "B * C"
+		ELSE
+			PRINT "B"
+
+	ADD SelectedProduct To Shopping Cart
+
+Go to Cart
+SHOW SelectedProduct and amountofSelectedProduct
+
+END
+
+
+		
