@@ -1,0 +1,66 @@
+PROGRAM LibraryApp
+
+Start 
+
+READ AND WRITE "buku" with string
+READ AND WRITE "buku_dipilih" with string
+READ AND WRITE "buku_ingin_dipinjam" with string
+READ AND WRITE "jumlah_buku_pinjam" with number
+READ AND WRITE "buku_dikembalikan" with string
+READ AND WRITE "jumlah_buku_dikembalikan" with number 
+READ AND WRITE "Masukan_permintaan" with string
+READ AND WRITE "Email" with string
+READ AND WRITE "Username" with string
+READ AND WRITE "Password" with string
+
+//Masuk akun 
+Store "Akun" with "Login" or "Sign up"
+   if "Akun" = "Sign up"
+      Input "Email", "Username", and "Password"
+      DISPLAY "Login"
+   else "Akun" = "Login"
+      Input "Username" and "Password"
+   Endif
+
+//Function untuk mencari buku
+Function search(buku)
+   READ AND WRITE "buku" with string
+   Store "search_buku" with input "buku" from user
+   Return "search_buku"
+End Function
+
+//Setelah login masuk ke halaman pertama dimulainya sistem
+Store "Masukan_permintaan" with "Peminjaman" or "Pengembalian"
+
+//Jika ingin meminjam buku
+   if "Masukan_Permintaan" = "Peminjaman"
+      Repeat
+         Store "Daftar_buku" with all of the book
+         Store "buku_dipilih" with the one that choose from the "Daftar_buku" or search
+      Until "buku_dipilih" = "buku_ingin_dipinjam"
+
+      While "buku_dipilih" = "buku_ingin_dipinjam"
+      do 
+         Store "jumlah_buku_pinjam" with 0
+         Store "buku_ingin_dipinjam" with "buku_dipilih"
+         Update "jumlah_buku_pinjam" = "jumlah_buku_pinjam" + 1  
+         Display "buku_ingin_dipinjam" and "jumlah_buku_pinjam"
+
+//Jika ingin mengembalikan buku
+   else "Masukan_Permintaan" = "Pengembalian"
+      Store "jumlah_buku_dikembalikan" with 0
+      Store "buku_dikembalikan" with choose some "buku_ingin_dipinjam"
+      Store "jumlah_buku_dikembalikan" with how much "buku_dikembalikan"
+      Update "jumlah_buku_pinjam" = "jumlah_buku_pinjam" - "jumlah_buku_dikembalikan" 
+
+    else "Masukan_Permintaan" = "Pengembalian"
+      Store "jumlah_buku_dikembalikan" with 0
+      While "buku_dikembalikan" from "buku_ingin_dipinjam" and "jumlah_buku_dikembalikan" <= "jumlah_buku_pinjam"
+      do 
+         Store "buku_dikembalikan" with "buku_ingin_dipinjam"
+         Update "jumlah_buku_dikembalikan" = "jumlah_buku_dikembalikan" + 1   
+         Update "jumlah_buku_pinjam" = "jumlah_buku_pinjam" - 1
+      
+      Display "buku telah dikembalikan" and "jumlah buku sekarang adalah" + "jumlah_buku_pinjam"
+
+END
