@@ -1,0 +1,10 @@
+START
+SHOW ListProduct 
+READ INPUT "choosen product"
+ADD choosen product To Cart
+IF "id product cart" IS NOT UNIQUE
+    THEN "number of product" of "id product cart" = +1
+ELSE 
+    MAKE NEW "id product cart"
+    THEN "number of product" of NEW "id product cart" = 1
+END
