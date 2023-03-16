@@ -1,0 +1,13 @@
+1. Pastikan sudah memiliki aplikasi untuk memesan makanan
+2. Jika belum ada, unduh aplikasinya terlebih dahulu
+3. jika sudah ada, lakukan pendaftaran user untuk mempunyai akun
+4. Pilih menu Oke-food dengan icon garpu dan sendok
+5. Masukan nama restaurant / cafe
+6. Pilih makanan yang diinginkan
+7. Klik icon + untuk menambahkan makanan
+8. Klik tombol orange untuk melakukan checkout
+9. Klik menu pesan jika ingin menambah makanan lain
+10. pilih metode pembayaran
+11. Tunggu driver untuk memesankan makanan untuk segera diantarkan
+12. Setelah driver datang, bayar tunai jika menggunakan metode pembayaran tunai
+13. Selesai
