@@ -1,0 +1,46 @@
+START
+
+DECLARE nama_pelanggan, alamat_pengiriman, pesanan, jumlah_pesanan, total_harga, harga, jumlah_bayar, kembalian
+
+READ nama_pelanggan
+READ alamat_pengiriman
+
+WHILE pesanan != "selesai"
+    READ pesanan
+    READ jumlah_pesanan
+
+    IF pesanan == "nasi goreng"
+        SET harga = 15000
+    ELSE IF pesanan == "ayam geprek"
+        SET harga = 20000
+    ELSE IF pesanan == "sate ayam"
+        SET harga = 25000
+    ELSE IF pesanan == "es teh manis"
+        SET harga = 5000
+    ELSE IF pesanan == "jus alpukat"
+        SET harga = 10000
+    ELSE
+        PRINT "Pesanan tidak tersedia"
+        CONTINUE
+
+    SET total_harga = total_harga + (harga * jumlah_pesanan)
+
+    PRINT "Anda ingin memesan lagi? (selesai/tidak)"
+    READ pesanan
+END WHILE
+
+PRINT "Total harga: " + total_harga
+
+READ jumlah_bayar
+SET kembalian = jumlah_bayar - total_harga
+
+PRINT "Terima kasih atas pesanan Anda"
+PRINT "Nama pelanggan: " + nama_pelanggan
+PRINT "Alamat pengiriman: " + alamat_pengiriman
+PRINT "Pesanan: " + pesanan
+PRINT "Jumlah pesanan: " + jumlah_pesanan
+PRINT "Total harga: " + total_harga
+PRINT "Jumlah bayar: " + jumlah_bayar
+PRINT "Kembalian: " + kembalian
+
+END
