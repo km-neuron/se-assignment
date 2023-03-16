@@ -1,0 +1,67 @@
+-- PROYEK AKHIR SOFTWARE ENGINEERING --
+-- MEMBUAT PSEUDOCODE TODO LIST --
+
+READ AND WRITE "judul" with string
+READ AND WRITE "tanggal" with date
+READ AND WRITE "deskripsi" with string
+READ AND WRITE "selesai" with boolean
+READ AND WRITE "onprogress" with boolean
+
+SET "onprogress" with TRUE
+
+WHILE "onprogress" equal TRUE 
+	DO SHOW "semua tugas"
+		IF "Ingin menambahkan tugas?" equal TRUE
+			INPUT "judul"
+			INPUT "deskripsi"
+			INPUT "tanggal"
+			SET "selesai" with FALSE
+			SELECT "Save"
+			PRINT "Berhasil menambahkan tugas"
+            BACK to SHOW "Semua Tugas"
+		ELSE 
+            BACK to SHOW "Semua Tugas"
+        END
+
+        IF "Pilih" equal TRUE
+            SHOW "Detail tugas"
+            	IF "selesai" equal TRUE
+                    IF "Ingin redo tugas?" equal TRUE
+                        SET "selesai" with FALSE
+                        PRINT "Redo Berhasil"
+                        BACK to SHOW "Semua Tugas"
+                    ELSE
+                        BACK to SHOW "Semua Tugas"
+                    END
+
+                ELSE 
+                    IF "Ingin menyelesaikan tugas?" equal TRUE
+                        SET "selesai" with TRUE
+                        PRINT "Tugas Selesai"
+                        BACK to SHOW "Semua Tugas"
+                    ELSE
+                        BACK to SHOW "Semua Tugas"
+                    END
+
+                END
+
+                IF "Ingin Hapus Tugas?" equal TRUE
+                    PROCESS "Hapus tugas"
+                    PRINT "Tugas dihapus"
+                    BACK to SHOW "Semua Tugas"
+                ELSE 
+                    BACK to SHOW "Semua Tugas"
+                END
+
+        ELSE
+            BACK to SHOW "Semua Tugas"
+        END
+
+        IF "ingin menutup App?" equal TRUE
+            SET "onprogress" with FALSE
+            PROCESS "Tutup App"
+        ELSE
+            BACK to SHOW "Semua Tugas"
+        END
+    END
+END
