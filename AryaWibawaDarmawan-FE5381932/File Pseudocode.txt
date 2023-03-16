@@ -1,0 +1,30 @@
+START
+
+READ AND WRITE "id" and "password"
+INPUT "id" AND "password"
+STORE "id" and "password"
+
+IF "id" and "password" is true
+    PRINT "anda telah login"
+ELSE "id" and "password" is false
+    PRINT "id atau password anda salah"
+
+SHOW "makanan" and "minuman"
+
+IF "makanan" HasClicked
+   MOVE to "pesan"
+ELSE "minuman" HasClicked
+   MOVE to "pesan"
+
+SHOW "pesan"
+INPUT "jumlah pesanan"
+INPUT "alamat pembeli"
+
+STORE "jumlah pesanan"
+STORE "alamat pembeli"
+STORE "harga"
+
+CALCULATE "pesan"
+PRINT "pesan" summary
+
+END
