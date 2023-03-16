@@ -1,0 +1,28 @@
+FUNCTION addTodoList (code, task, description, status)
+    STORE "tasks" with [code, task, description, status]
+    RETURN "tasks"
+END FUNCTION
+
+FUNCTION checklistTodolist (code, todoList)
+    FOR i FROM 0 in todoList
+        IF i["code"] === "code"
+            i["status"] = "FINISHED"
+            BREAK
+    END FOR
+END FUNCTION
+
+FUNCTION showTodolist (todoList)
+    FOR "i" FROM 0 in todoList
+        RETURN todoList[i]
+    END FOR
+END FUNCTION
+
+READ AND WRITE "todoList" with array
+READ AND WRITE "task" with string
+READ AND WRITE "description" with string
+READ AND WRITE "status" with string
+
+STORE "todoList" WITH addTodoList(todoList.length + 1, task, description, status)
+
+STORE "allTodolist" with showTodolist(todoList)
+PRINT allTodolist
