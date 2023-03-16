@@ -1,0 +1,15 @@
+PSEUDOCODE
+
+1. Read AND write "selected_barang" with string
+2. Read AND write "jumlah_barang" with number
+3. Read AND write "selected_barang" dan "jumlah_barang" ke keranjang
+4. IF "tambahan_belanja is TRUE"
+	back to step 1
+   ELSE
+	Calculate selected_barang * jumlah_barang 
+	Display "Total harga"
+6. Read AND write "bayar"
+7. IF "user_account is TRUE" then lanjutkan pembayaran
+   ELSE 
+	read and write "register user_account" then lanjutkan pembayaran
+8. END
