@@ -1,0 +1,53 @@
+READ AND WRITE listCategory with LIST
+READ AND WRITE listProduct with LIST
+READ AND WRITE listAcount with LIST
+READ AND WRITE selectedProduct with RECORD
+READ AND WRITE selectAccount with RECORD
+READ AND WRITE selecting with BOOLEAN
+
+WHILE selectingAccount 
+	DO STRORE SelectAccountt with "SELECTED" from listAccount
+		IF selecAccount equality TRUE
+			STORE Login
+		ELSE 
+			STORE Registrasi
+
+STORE listCategory with "PRODUCT CATEGORY"
+STORE listProduct with "LIST PRODUCT"
+STORE selecting with TRUE
+
+WHILE selecting 
+	DO STORE selectedProduct with "SELECTED" from listProduct
+		IF selectedProduct.stock less than listProduct["selectedIndex"].stock
+			selectedProduct.stock substract by 1
+		ADD selectedProduct into selected listProduct
+		STORE selecting with true or false
+	END WHILE
+
+READ AND WRITE total with NUMBER
+STORE total with calculate total(selectedProduct)
+
+READ AND WRITE menuPayment with LIST
+READ AND WRITE selectedPayment with RECORD
+READ AND WRITE eWallet RECORD
+STORE selecting with TRUE 
+
+WHILE checkout 
+STORE selectedPayment with "SELECTED" from menuPayment
+	IF selectedPayment with eWallet
+		IF eWallet.balence less than total 
+			STORE topup
+		ELSE
+			Payment
+	ELSE
+		COD
+		Confirm payment
+
+END WHILE
+	
+
+
+
+
+
+
