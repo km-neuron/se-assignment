@@ -1,0 +1,58 @@
+START
+
+READ AND WRITE "food" WITH string
+STORE "food" WITH no value
+READ AND WRITE "is_finished_selected" WITH boolean 
+STORE "shoping_chart" WITH no value
+STORE "is_finished_selected" WITH false
+READ AND WRITE "have_a_voucher_or_promo_code" WITH boolean
+STORE "voucher_or_promo_code" WITH no value
+STORE "have_a_voucher_or_promo_code" WITH false
+STORE "delivery_courier" WITH no value
+STORE "found"
+
+
+OPEN the food ordering apps
+DISPLAY the home page
+
+CLICK on the "food order menu"
+DISPLAY food list, food category and search field
+
+PROCEDURE select_the_food_to_be_ordered
+    SELECT "food" to be ordered
+    DISPLAY custom order form
+    CUSTOM the orders
+    ADD to shoping chart
+    IF the food is finished selected
+        CLICK "shoping_chart"
+        SET "is_finished_selected" TO TRUE
+    DISPLAY order checkout form
+END PROCEDURE
+
+WHILE "is_finished_selected" == FALSE
+    select_the_food_to_be_ordered
+
+PROCEDURE checkout_orders 
+    SELECT a payment method
+    IF have a voucher_or_promo_code 
+        ADD "voucher or promo code"
+        SET "have_a_voucher_or_promo_code" TO TRUE
+    DISPLAY amount of the invoice paid
+END PROCEDURE
+
+WHILE "have_a_voucher_or_promo_code" == FALSE
+    checkout_orders
+
+CLICK BUTTON "Checkout_Orders"
+DISPLAY looking for a courier delivery order
+
+IF "delivery_courier" has or has not been "found"
+    CONFIRM the order to the courier
+ELSE 
+    DISPLAY looking for a courier delivery order
+
+WAIT for the courier to deliver the order
+
+END
+
+
