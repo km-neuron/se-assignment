@@ -1,0 +1,25 @@
+READ AND WRITE "handphone" with object
+READ AND WRITE "aplikasi" with object
+
+WHILE "still_want_to_order"
+	STORE"order" with object
+
+STORE "metode pembayaran" with string
+
+PROCEDURE Bayar (object)
+	STORE "bayar" with object
+END PROCEDURE
+
+CALL Bayar (object)
+
+READ AND WRITE "waiting" with object
+
+READ AND WRITE "ready" with boolean
+
+IF "ready" equals "true"
+	PRINT "Pesanan Dikirim"
+ELSE
+	PRINT "Menunggu Pesanan Selesai"
+END IF
+
+READ AND WRITE "receiving food" with object
