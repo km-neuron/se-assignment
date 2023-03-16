@@ -1,0 +1,36 @@
+Proses order makanan/minuman via online
+
+START
+  While "Open Aplication"
+      Do "Set delivery addres"
+
+ READ and WRITE "List menu" with LIST
+ READ and WRITE "Select menu" with LIST
+
+ IF menus available
+      CHOOSE appropriate order
+ ELSE
+      CHOOSE "select menu"
+
+ THEN
+
+ IF appropriate order
+      CHOOSE calculate total
+ ELSE
+      CHOOSE "List menu"
+
+ THEN
+
+ CHOOSE e-wallet payment 
+      IF MONEY >= BILL
+           PRINT PAYMENT SUCCESSFULL
+      ELSE
+           PRINT CHOOSE topup e-wallet
+
+ THEN
+
+      WAITING FOR COURIER
+      ORDER ARRIVED
+
+FINISH
+
