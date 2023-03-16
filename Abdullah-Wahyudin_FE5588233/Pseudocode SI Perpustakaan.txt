@@ -1,0 +1,32 @@
+=> Library App (peminjaman dan pengembalian buku)
+
+READ AND WRITE id_anggota with string
+READ AND WRITE data_anggota with string
+READ AND WRITE id_buku with string
+READ AND WRITE data_buku with string
+READ AND WRITE peminjamanBuku with string
+READ AND WRITE invoice with string
+
+#PEMINJAMAN BUKU
+pengunjung scan kartu anggota di program
+  - IF kartu anggota masih berlaku
+    - IF ada buku yang dipinjam, program alert "kembalikan buku terlebih dahulu"
+    - ELSE lanjut ke procedure "peminjamanBuku"
+  - ELSE program menampilkan alert "buat/perbarui kartu anggota"
+
+PROCEDURE peminjamanBuku (id_anggota, data_anggota, id_buku, data_buku)
+  - IF buku tersedia, READ AND WRITE durasi_buku
+      - program menampilkan lokasi buku
+      - STORE invoice with id_anggota, data_anggota, id_buku, data_buku, durasi_buku
+  - ELSE, program menampilkan "buku tidak tersedia"
+READ invoice [id_anggota, data_anggota, id_buku, data_buku, durasi_buku]
+
+
+#PENGEMBALIAN BUKU
+pengunjung scan kartu anggota di program
+program menampilkan invoice
+  - IF peminjamanBuku > durasi_buku, terkena denda 
+      - IF belum bayar denda program alert "harap membayar denda terlebih dahulu"
+      - ELSE sudah bayar denda, program menampilkan lokasi buku
+  - ELSE program menampilkan lokasi buku
+pengunjung mengembalikan buku sesuai lokasi buku
