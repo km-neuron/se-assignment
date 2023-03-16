@@ -1,0 +1,48 @@
+Title: Todo List Algorithm
+
+Declaration:
+String Username, Password
+Integer userChoice, num
+Array userTask
+
+Description:
+START
+DO:
+    READ Username
+    READ Password
+    IF(Username && Password == True){
+        Go to Menu
+    } ELSE{
+        WRITE "Wrong Username or Password"
+    }
+WHILE (Username && Password == False)
+
+Menu:
+WHILE (userChoice != 3) DO:
+    WRITE:
+    Menu
+    1 = add task
+    2 = view task
+    3 = exit
+
+    READ userChoice
+
+    IF (userChoice == 1){
+        num = 0
+        FOR userTask[num] not last Array{
+            num = num + 1
+        }
+        READ userTask[num]
+    } ELSE IF (userChoice == 2){
+        num = 0
+        FOR userTask[num] not last Array{
+            WRITE userTask[num]
+            num = num + 1
+        }
+    } ELSE IF (userChoice < 1 OR userChoice > 3){
+        WRITE "Invalid Choice"
+    }
+END WHILE
+
+WRITE "Thanks For Using ME :)"
+END
