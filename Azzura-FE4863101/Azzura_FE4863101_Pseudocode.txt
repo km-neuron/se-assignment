@@ -1,0 +1,65 @@
+START
+
+DECLARE TYPE "menu" : record
+	"mName" string
+	"mPrice" number
+
+STORE "menu.mName" with {'nasi goreng', 'mie goreng', 'kwetiau goreng', 'bihun goreng'}
+STORE "menu.mPrice" with {15000, 15000, 20000, 15000}
+
+DECLARE TYPE "pesanan" : record
+	"pName" string
+	"pJumlah" number
+
+STORE "total_harga" with 0
+STORE "disc" with 30/100
+STORE "is_paid" with FALSE
+
+PRINT "Menu:"
+STORE "i" with 0
+FOR "i" <= "menu.size"
+	PRINT ""menu["i"].mName" - Rp."menu["i"].mPrice""
+
+WHILE TRUE
+	STORE "j" with 0
+	READ AND WRITE "item" with string
+	IF "item" equals "selesai"
+		BREAK
+	ELSE IF "item" not in "menu.mName"
+		PRINT "Maaf, pesanan tidak tersedia!"
+		CONTINUE
+	ELSE
+		STORE "pesanan[j].pName" with "item"
+
+	READ AND WRITE "jumlah" with number
+	STORE "pesanan[j].pJumlah" with "jumlah"
+	STORE "total_harga" with "total_harga += jumlah * menu.mPrice"
+	STORE "j" with "j += 1"
+
+PRINT "Pesanan anda:"
+STORE "i" with 0
+FOR "i" <= "pesanan.size"
+	PRINT ""pesanan["i"].pName" - Rp."pesanan["i"].pJumlah""
+
+READ AND WRITE "is_coupon" with string
+IF "is_coupon" equals "Yes"
+	STORE "total_harga" with "total_harga = total_harga - (disc*total_harga)"
+ELSE
+	BREAK
+
+READ AND WRITE "metode_bayar" with string
+IF "metode_bayar" equals "E-Money"
+	OPEN e-money app
+	STORE "is_paid" with "TRUE"
+ELSE IF "metode_bayar" equals "Cash"
+	STORE "is_paid" with "TRUE"
+ELSE
+	PRINT "Pesanan Dibatalkan! Pilih metode pembayaran!"
+
+IF "is_paid" equals "TRUE"
+    POST "pesanan.pName", "pesanan.pJumlah" TO RESTAURANT
+    DELIVERY
+
+END
+
+    
