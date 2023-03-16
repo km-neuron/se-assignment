@@ -1,0 +1,14 @@
+pseudocode memesan makanan
+
+1. start 
+2. "user" writes the food to be ordered
+3. user "select" the food menu 
+4. user determines the amount of food you want order
+5. "enter" address
+6. "select" a payment method
+	- cash
+	- debit
+7. "enter" voucheer code if any
+	- "if" there are input voucher
+	- "else" next to buy
+8. END 
