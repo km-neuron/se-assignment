@@ -1,0 +1,34 @@
+start
+Write(kode_barang)
+read(kode_barang)
+write(jumlah)
+write(jumlah)
+ While (status = true)
+
+ If  kode_barang = 122 then
+        Nama_barang1 = (“pensil rotring”)
+        harga_barang1 = 37000
+        jumlah = jumlah1
+Else If  kode_barang  = 123 then
+        Nama_barang2 = (“penghapus boxy”)
+        harga_barang1 = 6000
+        jumlah = jumlah2
+Else If  kode_barang  = 124 then
+        Nama_barang3 = (“penggari segitiga”)
+        harga_barang1 = 15000
+        jumlah = jumlah3
+else
+write(“silahkan memasukkan barang tambahan) 
+
+end 
+
+write kode_barang
+write Nama_barang
+write harga_barang
+write uang_pembayaran
+write kembalian
+end
+
+write Total
+read uang_pembayaran
+write uang_pembayaran dan total
