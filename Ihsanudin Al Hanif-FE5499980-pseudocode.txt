@@ -1,0 +1,155 @@
+Alogaritma Proses order makanan/minuman via online.
+Mulai
+    Buka aplikasi
+    Atur alamat pengiriman
+    Lakukan:
+        Pilih menu makanan dan minuman
+        Jika makanan dan minuman tidak tersedia:
+            Tampilkan pesan "Makanan dan minuman yang dipilih tidak tersedia"
+            Kembali ke Pilih menu makanan dan minuman
+        Jika makanan dan minuman tersedia:
+            Apakah pesanan sesuai?
+            Jika pesanan tidak sesuai:
+                Tampilkan pesan "Pesanan yang dipilih tidak sesuai"
+                Kembali ke Pilih menu makanan dan minuman
+            Jika pesanan sesuai:
+                Hitung total biaya yang harus dibayarkan
+                Apakah saldo cukup?
+                Jika saldo tidak cukup:
+                    Tampilkan pesan "Saldo tidak cukup, silakan top-up saldo"
+                    Pengguna melakukan top-up saldo
+                    Kembali ke Hitung total biaya yang harus dibayarkan
+                Jika saldo cukup:
+                    Pengguna melakukan pembayaran
+                    Kurir mengirimkan pesanan
+                    Tampilkan pesan "Pesanan sudah diambil oleh kurir"
+    Apakah pesanan sudah sampai?
+    Jika belum:
+        Tampilkan pesan "Pesanan belum sampai, tunggu beberapa saat lagi"
+        Kembali ke Apakah pesanan sudah sampai?
+    Jika sudah:
+        Tampilkan pesan "Pesanan sudah sampai di tangan pengguna"
+Selesai
+
+PROGRAM OrderMakananDanMinuman
+
+READ AND WRITE alamat_pengiriman, menu_makanan, menu_minuman, konfirmasi_pesanan, konfirmasi_pembayaran, status_pesanan, nama_kurir with string
+READ AND WRITE total_biaya, saldo, jumlah_top_up with number
+READ AND WRITE menu_tersedia, saldo_cukup, pesanan_sesuai, saldo_terupdate, pesanan_tiba with boolean
+READ AND WRITE harga_makanan, harga_minuman, biaya, harga_item with number
+
+PROCEDURE atur_alamat_pengiriman()
+    PRINT "Masukkan alamat pengiriman"
+    READ alamat_pengiriman
+END PROCEDURE
+
+PROCEDURE pilih_menu()
+    PRINT "Pilih menu makanan"
+    READ menu_makanan
+    PRINT "Pilih menu minuman"
+    READ menu_minuman
+END PROCEDURE
+
+FUNCTION cek_menu_tersedia(nama_item)
+    IF nama_item IN ["ayam goreng", "nasi goreng", "mie ayam", "teh manis", "jus jeruk"]:
+        RETURN TRUE
+    ELSE:
+        RETURN FALSE
+    END IF
+END FUNCTION
+
+FUNCTION hitung_biaya()
+    STORE harga_item with 0
+    STORE biaya with 0
+    IF cek_menu_tersedia(menu_makanan) AND cek_menu_tersedia(menu_minuman):
+        STORE harga_makanan with 15000
+        STORE harga_minuman with 5000
+        STORE harga_item with harga_makanan plus harga_minuman
+        STORE biaya with harga_item multiply by 1.1
+    END IF
+    RETURN biaya
+END FUNCTION
+
+PROCEDURE cek_pesanan()
+    STORE pesanan_sesuai with FALSE
+    IF cek_menu_tersedia(menu_makanan) AND cek_menu_tersedia(menu_minuman):
+        PRINT "Pesanan Anda:"
+        PRINT menu_makanan
+        PRINT menu_minuman
+        PRINT "Apakah pesanan Anda sudah benar?"
+        READ konfirmasi_pesanan
+        IF konfirmasi_pesanan = "ya":
+            STORE pesanan_sesuai with TRUE
+        END IF
+    END IF
+END PROCEDURE
+
+PROCEDURE cek_saldo()
+    STORE saldo_cukup with FALSE
+    PRINT "Total biaya yang harus dibayarkan: "
+    STORE total_biaya with hitung_biaya()
+    PRINT total_biaya
+    IF total_biaya <= saldo:
+        STORE saldo_cukup with TRUE
+    ELSE:
+        PRINT "Saldo tidak mencukupi. Mohon lakukan top-up saldo."
+        STORE saldo_terupdate with False
+        DO WHILE saldo_terupdate = False:
+            PRINT "Masukkan jumlah saldo yang ingin ditambahkan:"
+            READ jumlah_top_up
+            IF jumlah_top_up > 0:
+                STORE saldo with saldo plus jumlah_top_up
+                STORE saldo_terupdate with True
+            END IF
+        END DO
+    END IF
+END PROCEDURE
+
+PROCEDURE lakukan_pembayaran()
+    PRINT "Pembayaran: "
+    PRINT "Silahkan lakukan pembayaran sebesar " plus total_biaya plus " melalui aplikasi pembayaran Anda."
+    PRINT "Apakah pembayaran telah berhasil dilakukan?"
+    READ konfirmasi_pembayaran
+END PROCEDURE
+
+PROCEDURE kirim_pesanan()
+    PRINT "Mohon tunggu kurir kami untuk mengambil pesanan Anda."
+    STORE nama_kurir with "Budi"
+    PRINT "Pesanan Anda sedang dalam perjalanan oleh " plus nama_kurir plus "."
+    PRINT "Apakah pesanan Anda sudah tiba?"
+    READ pesanan_tiba
+    IF pesanan_tiba = "ya":
+        STORE status_pesanan with "terkirim"
+    ELSE:
+        STORE status_pesanan with "belum terkirim"
+    END IF
+END PROCEDURE
+
+CALL atur_alamat_pengiriman()
+CALL pilih_menu()
+STORE menu_tersedia with cek_menu_tersedia(menu_makanan) AND cek_menu_tersedia(menu_minuman)
+WHILE menu_tersedia = FALSE:
+    PRINT "Maaf, makanan atau minuman yang Anda pesan tidak tersedia."
+    CALL pilih_menu()
+    STORE menu_tersedia with cek_menu_tersedia(menu_makanan) AND cek_menu_tersedia(menu_minuman)
+END WHILE
+CALL cek_pesanan()
+WHILE pesanan_sesuai = FALSE:
+    PRINT "Maaf, pesanan Anda tidak sesuai."
+    CALL pilih_menu()
+    CALL cek_pesanan()
+END WHILE
+CALL cek_saldo()
+WHILE saldo_cukup = FALSE:
+    CALL cek_saldo()
+END WHILE
+CALL lakukan_pembayaran()
+CALL kirim_pesanan()
+
+IF status_pesanan = "terkirim":
+    PRINT "Pesanan telah sampai. Selamat menikmati!"
+ELSE:
+    PRINT "Pesanan belum terkirim. Mohon maaf atas ketidaknyamanannya."
+END IF
+
+END PROGRAM
