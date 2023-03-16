@@ -1,0 +1,9 @@
+1.pilih menu
+2.masukan jumlah pesanan
+3.masukan detail pesanan
+4.masukan ke keranjang
+5.masukan alamat(masukan alamat default/masukan alamat baru)
+6.konfirmasi pesanan
+7.pilih metode pembayaran(e-wallet/tunai)
+8.konfirmasi pembayaran
+9.menunggu pesanan
