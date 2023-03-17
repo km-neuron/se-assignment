@@ -1,0 +1,29 @@
+PROGRAM ShoppingChart
+
+START
+
+STORE "Cart" as string with 0
+STORE "Total price" as number with 0
+
+SHOW "Shop page"
+READ INPUT "Choosen product"
+SHOW "Choosen product"
+READ INPUT "Amount of choosen product"
+READ INPUT "Product add to cart"
+STORE "Cart" with "Choosen product"
+STORE "Total price" WITH "Amount of choosen product" TIMES "Product price"
+SHOW "Cart page"
+
+IF "Go to checkout" EQUAL "Yes"	
+	DISPLAY FORM Payment
+    	DO READ "payment"
+    	VALIDATE "payment"
+    	IF "payment" IS "Yes"
+        	PRINT "Payment successfully"
+    	ELSE
+        	BACK TO DISPLAY FORM Payment
+ELSE 
+	BACK TO "Cart page"
+
+END
+
