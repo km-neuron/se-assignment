@@ -1,0 +1,47 @@
+START
+OPEN the FoodOrBeverages ordering application
+DISPLAY the home page
+READ AND WRITE "AccountName" with string
+IF "AccountName" is True
+	PROCESS login
+ELSE
+	“AccountName” is FALSE
+	PRINT "silahkan buat akun terlebih dahulu"
+	LOAD register page	
+IF login process is complete
+	LOAD HomePage
+	SEARCH "MenuMakanan"
+	Display “ Daftar Menu Makanan”
+READ AND WRITE “address” with string
+READ AND WRITE “Selected Makanan” with string
+READ AND WRITE “Jumlah Pesanan” with number
+SEARCH Food or Drink you want
+	IF Order is on the list
+	     CHOOSE “add to cart”
+	ELSE
+	    SEARCH Order
+IF “Tambah Pesanan” is TRUE
+	SEARCH Food or Drink you want
+ELSE 
+	Checkout the cart
+	Display “Payment page”
+READ AND WRITE “Konfirmasi alamat pengiriman” with string
+IF “Have Voucher” is TRUE
+	Display “Voucher”
+	Use Voucher
+	Calculation Selected Makanan * Jumlah Pesanan * harga + ongkir - voucher
+ELSE “ Don’t have Voucher” is FALSE
+	Calculation Slected Makanan* Jumlah Pesanan + ongkir
+Display “Total Tagihan”
+READ AND WRITE “Metode pembayaran”
+READ AND WRITE “Pesan sekarang”
+SEARCH Kurir
+IF “Mendapatkan Kurir” is TRUE
+	PRINT “Mendapatkan Kurir”
+	READ AND WRITE “Kurir mengkonfirmasi pesanan”
+ELSE
+	SEARCH “Kurir pengantar”
+THEN
+ORDER HAS ARRIVED
+ORDER HAS BEEN RECEIVED
+FINISH
