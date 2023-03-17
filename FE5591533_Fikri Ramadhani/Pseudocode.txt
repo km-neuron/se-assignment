@@ -1,0 +1,43 @@
+-- PROYEK AKHIR SOFTWARE ENGINEERING --
+-- MEMBUAT PSEUDOCODE LIBRARY APP --
+
+
+READ AND WRITE "id_angota" with number
+READ AND WRITE "id_buku" with number
+READ AND WRITE "tanggal_pinjam" with date
+READ AND WRITE "tanggal_kembali" with date
+READ AND WRITE "tanggal_kembali" with date
+
+
+
+show menu (peminjaman, pengembalian)
+	if peminjaman
+    		input id_anggota
+    		input id_buku
+    		input tanggal_pinjam
+    		input tanggal_kembali
+    		if cek_anggota(id_anggota) == true and cek_buku(id_buku) == true then
+        		if cek_ketersediaan(id_buku) == true then
+            		tambah_peminjaman(id_anggota, id_buku, tanggal_pinjam, tanggal_kembali)
+            		ubah_status_buku(id_buku, "Dipinjam")
+            		tampilkan_pesan("Peminjaman berhasil")
+        		else
+            		tampilkan_pesan("Buku tidak tersedia")
+        		endif
+    			else
+        		tampilkan_pesan("Data anggota atau buku tidak valid")
+    		endif
+	end
+
+	if pengembalian
+    		input id_anggota
+    		input tanggal_kembali
+    		if cek_peminjaman(id_anggota) == true then
+        	ubah_status_buku(get_id_buku(id_anggota), "Tersedia")
+        	ubah_tanggal_kembali(id_anggota, tanggal_kembali)
+        		tampilkan_pesan("Pengembalian berhasil")
+    		else
+        		tampilkan_pesan("Data peminjaman tidak valid")
+    		endif
+	end
+end
