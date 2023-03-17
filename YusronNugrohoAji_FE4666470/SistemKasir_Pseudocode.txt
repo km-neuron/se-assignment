@@ -1,0 +1,69 @@
+DECLARE prices AS LIST
+DECLARE items AS LIST
+DECLARE discount_item AS STRING
+DECLARE discount_percentage AS FLOAT
+DECLARE total AS FLOAT
+
+SET total = 0
+
+PRINT "Welcome to simple cashier system!"
+PRINT "Keperluan apa yang kamu butuhkan? 1. input item dan harga atau 2. melakukan transaksi ? (1/2)"
+INPUT options
+
+IF option == 1
+    // untuk user melakukan input item dan harga ke sistem
+    WHILE TRUE
+
+        PRINT "Masukkan nama item dan harga"
+        PRINT "Masukkan nama item == 'done' dan harga == 0 untuk mengakhiri proses input"
+
+        INPUT item
+        INPUT price
+
+            IF item == "done" AND price == 0
+                BREAK
+            END IF
+
+        APPEND item TO items
+        APPEND price TO prices
+
+        // Check for discount item
+        PRINT "Apakah item diskon? (y/n)"
+        INPUT has_discount
+
+        IF has_discount == "y"
+            PRINT "Masukkan nama item diskon"
+            INPUT discount_item
+            PRINT "Masukkan jumlah besaran diskon (ex: 50 untuk diskon 50%)"
+            INPUT discount_percentage
+        END IF
+
+    END WHILE
+    
+
+IF option == 2
+    // Untuki menghitung total harga transaksi
+    INPUT items
+    FOR i IN RANGE OF LENGTH(items)
+    // Untuk mengecek semua item
+
+        IF items[i] == discount_item
+            SET total = total + price[i] * (100 - discount_percentage)%
+            ELSE
+            SET total = total + prices[i]
+        END IF
+
+    END FOR
+
+    // print harga total
+    PRINT "Total Harga dari seluruh transaksimu adalah" + total
+
+END IF
+
+
+
+
+
+
+
+
