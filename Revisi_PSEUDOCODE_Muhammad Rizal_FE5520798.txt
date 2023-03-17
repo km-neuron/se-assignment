@@ -1,0 +1,76 @@
+PSEUDOCODE PEMESANAN MAKANAN DAN MINUMAN VIA ONLINE
+
+READ AND WRITE "order" with STRING
+STORE "order" with STRING
+
+IF "order" is "food"
+	READ AND WRITE "listFoods" with LIST
+	READ AND WRITE "selectFoods" with RECORD
+	READ AND WRITE "stockFoods" with BOOLEAN
+
+	STORE "stockFoods" with TRUE
+
+	WHILE "false"
+		DO "selectFoods"
+
+	READ AND WRITE "calculateOrder" with BOOLEAN
+	STORE "calculateOrder" with FALSE
+
+	WHILE "true"
+		DO "order"
+
+	READ AND WRITE "inputAddress" with STRING
+	STORE "inputAddress" with STRING
+	
+	READ AND WRITE "selectMethodPayment" with STRING
+	STORE "selectMethodPayment" with STRING
+	IF "selectMethodPayment" is "cod"
+		READ AND WRITE "waitYourOrderUntil" with STRING
+		STORE "waitYourOrderUntil" with STRING
+		READ AND WRITE "payment" with NUMBER
+		STORE "payment" with NUMBER
+	ELSE 
+		READ AND WRITE "checkSaldo" with NUMBER
+		STORE "checkSaldo" with NUMBER
+		IF "checkSaldo" is "enough"
+			READ AND WRITE "payment" with NUMBER
+			STORE "payment" with NUMBER
+		ELSE	
+			READ AND WRITE "payment" with NUMBER
+			STORE "topupEwallet" with NUMBER
+ELSE
+	READ AND WRITE "listDrinks" with LIST
+	READ AND WRITE "selectDrinks" with RECORD
+	READ AND WRITE "stockDrinks" with BOOLEAN
+
+	STORE "stockDrinks" with TRUE
+
+	WHILE "false"
+		DO "selectDrinks"
+
+	READ AND WRITE "calculateOrder" with BOOLEAN
+	STORE "calculateOrder" with FALSE
+
+	WHILE "true"
+		DO "order"
+
+	READ AND WRITE "inputAddress" with STRING
+	STORE "inputAddress" with STRING
+	
+	READ AND WRITE "selectMethodPayment" with STRING
+	STORE "selectMethodPayment" with STRING
+	IF "selectMethodPayment" is "cod"
+		READ AND WRITE "waitYourOrderUntil" with STRING
+		STORE "waitYourOrderUntil" with STRING
+		READ AND WRITE "payment" with NUMBER
+		STORE "payment" with NUMBER
+	ELSE 
+		READ AND WRITE "checkSaldo" with NUMBER
+		STORE "checkSaldo" with NUMBER
+		IF "checkSaldo" is "enough"
+			READ AND WRITE "payment" with NUMBER
+			STORE "payment" with NUMBER
+		ELSE	
+			READ AND WRITE "payment" with NUMBER
+			STORE "topupEwallet" with NUMBER
+END
