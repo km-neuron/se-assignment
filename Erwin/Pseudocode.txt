@@ -1,0 +1,79 @@
+START
+	PRINT "Displaying home page for content audit tools to do list"
+	READ AND WRITE "auditPages" with empty array
+	
+	WHILE true:
+		PRINT "Add pages to audit"
+		READ AND WRITE "page" with string input
+		ADD "page" to "auditPages"
+		
+		PRINT "Do you have any pages less than 6 months old?"
+		READ AND WRITE "answer" with string input
+		IF "answer" == "Yes":
+			PRINT "Processing request"
+			FOR "page" in "auditPages":
+				IF "page" less than 6 months old:
+					PRINT "Processing request"
+				ELSE:
+					PRINT "No pages less than 6 months old"
+					BREAK
+				END IF
+			END FOR
+		ELSE:
+			PRINT "No pages less than 6 months old"
+			BREAK
+		END IF
+	
+	PRINT "Click filter to select top 3 pages"
+	PRINT "Processing request"
+	
+	FOR "page" in "auditPages":
+		SORT "auditPages" by "page" traffic DESC
+		SET "top3" with first 3 "auditPages"
+	END FOR
+	
+	IF "top3" exists:
+		PRINT "Top 3 pages found"
+	ELSE:
+		PRINT "No top 3 pages found"
+	END IF
+	
+	PRINT "Click filter to select keywords for each page"
+	PRINT "Processing request"
+	
+	FOR "page" in "top3":
+		READ AND WRITE "keywords" with empty array
+		PRINT "Displaying keywords for page " + "page"
+		FOR "keyword" in "page" keywords:
+			ADD "keyword" to "keywords"
+			PRINT "Keyword: " + "keyword"
+		END FOR
+	END FOR
+	
+	PRINT "Click volume button to select keywords with 500/month volume"
+	PRINT "Processing request"
+	
+	FOR "page" in "top3":
+		READ AND WRITE "volumeKeywords" with empty array
+		PRINT "Displaying keywords with 500/month volume for page " + "page"
+		FOR "keyword" in "page" keywords:
+			READ AND WRITE "volume" with integer input
+			IF "volume" >= 500:
+				ADD "keyword" to "volumeKeywords"
+				PRINT "Keyword: " + "keyword"
+				PRINT "Volume: " + "volume"
+			END IF
+		END FOR
+	END FOR
+	
+	PRINT "Click download to get requested data"
+	PRINT "Processing request"
+	
+	IF "dataDownloaded":
+		PRINT "Download successful"
+		PRINT "Audit data obtained"
+	ELSE:
+		PRINT "Download failed"
+		PRINT "Retry download"
+	END IF
+END
