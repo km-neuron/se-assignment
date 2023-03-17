@@ -1,0 +1,44 @@
+PROGRAM ListToDo
+
+START
+
+READ AND WRITE "title" with string
+READ AND WRITE "information" with string
+READ AND WRITE "date" with string
+
+FUNCTION allData()
+    FOR i IN TABLE listToDo 
+        PRINT "title", "information", "date"
+END FUNCTION
+
+FUNCTION create()
+    DISPLAY FORM AddingData
+    READ INPUT "tile", "information", "date"
+    IF CLICK BUTTON "save"
+        IF CLICK BUTTON "yes"
+            INSERT TO TABLE listToDo "tilte", "information", "date"
+            DATABASE save
+            PRINT "Data Saved Successfully"
+        ELIF CLICK BUTTON "no"
+            BACK TO DISPLAY FORM AddingData
+END FUNCTION
+
+FUNCTION delete()
+	DELETE TO TABLE listToDo "title"
+	PRINT "Data Deleted Successfully"
+END FUNCTION
+
+SET "progres" with TRUE
+
+WHILE "progres" equal TRUE
+	DO CALL FUNCTION allData()
+	IF CLICK BUTTON "add data"
+        CALL FUNCTION create()
+	ELIF CLICK BUTTON "delete" 
+		IF CLICK BUTTON "yes"
+			CALL FUNCTION delete()
+		ELIF CLICK BUTTON "NO"
+			CALL FUNCTION allData()
+	END
+
+END
