@@ -1,0 +1,145 @@
+Pseudocode
+
+  Menghitung Denda pada Proses Peminjaman dan Pengembalian Buku
+
+READ AND WRITE "nama" with string
+READ AND WRITE "id_buku" with number 
+READ AND WRITE "tanggal_peminjaman" with date 
+READ AND WRITE "tanggal_pengembalian" with date
+READ AND WRITE "total_denda" with number 
+
+
+STORE "nama" with datapengunjung
+STORE "tanggal_peminjaman" with prosespeminjaman
+STORE "tanggal_pengembalian" with prosespengembalian
+STORE "total_denda" with CALCULATE tanggal_pengembalian - tanggal_peminjaman
+
+
+PENGISIAN FORMULIR
+
+//input data pengunjung
+IF pengunjung mengisi formulir peminjaman then
+	input nama
+	input tempat_lahir
+	input tanggal_lahir
+	input alamat
+	input id_buku
+IF menyimpan data then
+	tekan simpan
+IF pengunjung sudah menjadi anggota then
+	keluar id_anggota
+ELSE
+	tekan batal
+ELSE
+	masukkan id_anggota
+	
+END IF
+END
+
+
+PROSES PEMINJAMAN BUKU
+
+//input data peminjaman buku
+READ id_anggota
+READ id_buku
+READ tanggal_peminjaman
+
+//cek ketersediaan buku
+IF  buku yang dipinjam tersedia(id_buku) then
+    
+	// membuat data peminjaman baru
+	peminjaman = {id_anggota, id_buku, tanggal_peminjaman}
+
+	//menambahkan data peminjaman ke daftar peminjaman
+	daftar_peminjaman.Tambah(peminjaman)
+
+	//menandai buku yang akan dipinjam
+	tandai buku dipinjam(id_buku)
+
+	//output pesan berhasil meminjam buku
+
+PRINT "anda berhasil meminjam buku"
+
+ELSE 
+	//output pesan anda gagal meminjam buku karena buku tidak tersedia
+
+PRINT "buku tidak tersedia untuk dipinjam"
+
+END IF
+END
+
+
+PROSES PENGEMBALIAN BUKU
+
+//input data pengembalian buku
+READ id_anggota
+READ id_buku
+READ tanggal_pengembalian
+
+//cari data peminjaman yang sesuai
+peminjaman = cari_peminjaman(id_anggota, id_buku)
+
+//jika data ditemukan
+IF data peminjaman ditemukan then
+
+	//update data peminjaman dengan tanggal_pengembalian
+	peminjaman.tanggal_pengembalian = tanggal_pengembalian
+
+	//hapus data peminjaman dari daftar peminjaman
+	daftar_peminjaman.Hapus(peminjaman)
+
+	//tandai buku yang tersedia
+	tandai_buku_tersedia(id_buku)
+
+	//output pesan berhasil mengembalikan buku
+
+PRINT "anda berhasil mengembalikan buku"
+
+ELSE
+	//output pesan jika data peminjaman tidak tersedia
+
+PRINT "data peminjaman tidak ditemukan"
+
+END IF
+END
+
+
+MENGHITUNG DENDA
+
+//inisialisasi variabel
+
+tanggal_peminjaman = tanggal pada saat meminjam buku
+tanggal_pengembalian = batas waktu peminjaman
+denda_per_hari = 500
+jumlah_buku = jumlah buku yang dipinjam
+i = 0
+
+
+//perulangan untuk setiap buku yang dipinjam
+
+WHILE i < jumlah_buku 
+DO
+	//input tanggal_pengembalian
+	tanggal_pengembalian = ("masukkan tanggal pengembalian buku ke-" + i)
+
+	//menghitung selisih waktu pengembalian dengan waktu peminjaman 
+	selisih_hari = tanggal_pengembalian - tanggal_peminjaman
+	//menghitung denda jika melebihi batas waktu pengembalian buku
+
+	IF selisih_hari > 0 then 
+	   denda =  (selisih_hari - 7) * 500
+
+	ELSE
+	   denda = 0
+
+	//pindah ke buku berikutnya
+	i = i + 1
+
+	END IF
+
+//Output total denda
+
+PRINT (selisih_hari + "denda yang harus dibayar") * "denda_per_hari"
+PRINT total denda 
+END
+ 
