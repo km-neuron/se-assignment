@@ -1,0 +1,16 @@
+IF "bullet checklist"
+    print bullet checklist
+ELSE
+    print bullet number
+READ AND WRITE "type the task's name"
+READ AND WRITE "set the deadline"
+IF "finish"
+    save
+ELSE "add new task"
+    back to the first step
+END IF
+PRINT "saving the changes"
+IF "mark as done is TRUE"
+    READ AND WRITE "strikehrough the task"
+ELSE
+    PRINT "saving the changes"
