@@ -1,0 +1,34 @@
+Proses order makanan/minuman via online
+
+ READ and WRITE "Delivery address" with string
+ READ and WRITE "List menu" with LIST
+ READ and WRITE "Select menu" with LIST
+
+ STORE "List menu" with Food_menus
+ STORE "Select menu" with TRUE
+
+ IF "Select menu" stock less than "List menu"
+      CHOOSE select another available menu in "List menu"
+ ELSE
+      CHOOSE appropriate order
+
+ THEN
+
+ IF there are additional other Food_menus
+      CHOOSE "List menu"
+ ELSE
+      CHOOSE "calculate total"
+
+ THEN
+ 
+ READ and WRITE Total_price with NUMBER
+ STORE Total_price with "calculate total" 
+ 
+ CHOOSE e-wallet payment 
+      IF MONEY >= BILL
+           PRINT PAYMENT SUCCESSFULL
+      ELSE
+           PRINT CHOOSE topup e-wallet
+
+ END
+
