@@ -1,0 +1,12 @@
+Pseudocode:
+
+graphql
+Copy code
+Input jumlah_pasien
+for i in range(jumlah_pasien):
+    Input nama_pasien
+    Input umur_pasien
+    Input alamat_pasien
+    Input penyakit_pasien
+    Simpan data pasien ke dalam database
+    Output "Data pasien berhasil disimpan"
