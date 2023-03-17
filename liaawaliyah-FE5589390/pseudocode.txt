@@ -1,0 +1,63 @@
+//Inisialisasi variabel yang dibutuhkan
+READ AND WRITE nama_pasien WITH STRING
+READ AND WRITE nomor_ KTP WITH NUMBER
+READ AND WRITE tanggal_lahir WITH dateTime
+READ AND WRITE alamat WITH STRING
+READ AND WRITE nomor_kamar WITH NUMBER
+READ AND WRITE rekam_medis_pasien WITH STRING
+READ AND WRITE kartu_identitas_pasien WITH STRING
+
+
+//Looping do while untuk memastikan data pasien yang di input sudah benar
+DO
+// Meminta input data pasien
+INPUT "Nama pasien: ", nama_pasien
+INPUT "Nomor KTP: ", nomor_ktp
+INPUT "Tanggal lahir (dd/mm/yyyy): ", tanggal_lahir
+INPUT "Alamat: ", alamat
+
+// Melakukan validasi data pasien
+IF nama_pasien == "" OR nomor_ktp == "" OR tanggal_lahir == "" OR alamat == "" THEN
+    DISPLAY "Mohon lengkapi data pasien."
+ELSE
+    // Melakukan pengecekan ketersediaan kamar
+    IF jumlah_kamar_tersedia > 0 THEN
+        // Menentukan nomor kamar
+        nomor_kamar = cari_nomor_kamar()
+        
+        // Membuat rekam medis pasien
+        rekam_medis_pasien = buat_rekam_medis(nama_pasien, nomor_ktp, tanggal_lahir, alamat, nomor_kamar)
+        
+        // Memberikan kartu identitas pasien
+        kartu_identitas_pasien = buat_kartu_identitas(nama_pasien, nomor_ktp, nomor_kamar)
+        
+        // Memberikan nomor kamar dan arah kamar kepada pasien
+        DISPLAY "Pasien ", nama_pasien, " dapat masuk ke kamar ", nomor_kamar, ". Arah kamar: ", arah_kamar
+        
+        // Mengurangi jumlah kamar yang tersedia
+        jumlah_kamar_tersedia = jumlah_kamar_tersedia - 1
+    ELSE
+        DISPLAY "Maaf, kamar tidak tersedia."
+    END IF
+END IF
+//Jika semua input valid, keluar dari loop do while
+WHILE true
+END
+
+// Fungsi untuk mencari nomor kamar yang tersedia
+FUNCTION cari_nomor_kamar()
+    // Kode untuk mencari nomor kamar
+    RETURN nomor_kamar
+END FUNCTION
+
+// Fungsi untuk membuat rekam medis pasien
+FUNCTION buat_rekam_medis(nama_pasien, nomor_ktp, tanggal_lahir, alamat, nomor_kamar)
+    // Kode untuk membuat rekam medis pasien
+    RETURN rekam_medis_pasien
+END FUNCTION
+
+// Fungsi untuk membuat kartu identitas pasien
+FUNCTION buat_kartu_identitas(nama_pasien, nomor_ktp, nomor_kamar)
+    // Kode untuk membuat kartu identitas pasien
+    RETURN kartu_identitas_pasien
+END FUNCTION
