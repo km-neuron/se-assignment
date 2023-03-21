@@ -1,0 +1,33 @@
+Pseudocode_Shopping_Cart_Sederhana 
+  
+ START 
+  
+ READ AND WRITE "nama_barang" with string 
+ READ AND WRITE "jumlah_barang" with number 
+ STORE "nama_barang" with "buku" 
+  
+ READ AND WRITE "barang_yang_dipilih" with TRUE 
+ FUNCTION AddedToCart (kuantitasBarang) 
+         STORE "barang_yang_dipilih" with "kuantitasBarang" 
+         RETURN "barang_yang_dipilih" 
+ END FUNCTION 
+  
+ WHILE "nama_barang" is selected with TRUE 
+         DO 
+         IF "nama_barang" is added to the cart 
+                 STORE "jumlah_barang" with AddedToCart (as added by the user) 
+                  PRINT "barang berhasil dimasukan ke dalam keranjang" 
+                 THAN         
+                 PRINT "Mencari barang lainnya?" 
+                 IF "YES" 
+                         STORE "jumlah_barang" with AddedToCart (as added by the user) 
+                          PRINT "barang berhasil dimasukan ke dalam keranjang" 
+                 ELSE  
+                         STORE "jumlah_barang" with AddedToCart (reduce number of items) 
+                          
+         ELSE  
+                 READ AND WRITE "nama_barang" again with "buku" 
+         END IF 
+ END WHILE 
+  
+ END
