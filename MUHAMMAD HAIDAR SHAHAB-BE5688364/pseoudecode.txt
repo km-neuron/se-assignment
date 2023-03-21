@@ -1,0 +1,57 @@
+Proses order makanan/minuman via online
+
+STORE OPEN APPLICATION ("Buka Aplikasi")
+
+STORE CHOOSE "menu" WITH BOOLEAN
+
+IF a "menu" is "makanan"
+    STORE "konfirmasi menu makanan"
+    READ AND WRITE "Masukan alamat" with STRING
+    STORE CHOOSE "metode pembayaran" WITH BOOLEAN
+        IF A "metode pembayaran" is E-Money
+            STORE CHOOSE "konfirmasi pembayaran" WITH BOOLEAN
+                IF berhasil "konfirmasi pembayaran" 
+                    STORE "pengiriman pesanan"
+                ELSE  
+                    STORE CHOOSE "metode pembayaran" WITH BOOLEAN
+
+        ELSE IF B "metode pembayaran" is Credit Card Online
+            STORE CHOOSE "konfirmasi pembayaran" WITH BOOLEAN
+                IF berhasil "konfirmasi pembayaran" 
+                    STORE "pengiriman pesanan"
+                ELSE  
+                    STORE CHOOSE "metode pembayaran" WITH BOOLEAN
+                    
+        ELSE "metode pembayaran" is Online Banking
+            STORE CHOOSE "konfirmasi pembayaran" WITH BOOLEAN
+                IF berhasil "konfirmasi pembayaran" 
+                    STORE "pengiriman pesanan"
+                ELSE  
+                    STORE CHOOSE "metode pembayaran" WITH BOOLEAN
+
+ELSE "menu" is "minuman"
+    STORE "konfirmasi menu minuman"
+    READ AND WRITE "Masukan alamat " with STRING
+    STORE CHOOSE "metode pembayaran" WITH BOOLEAN
+        IF A "metode pembayaran" is E-Money
+            STORE CHOOSE "konfirmasi pembayaran" WITH BOOLEAN
+                IF berhasil "konfirmasi pembayaran" 
+                    STORE "pengiriman pesanan"
+                ELSE  
+                    STORE CHOOSE "metode pembayaran" WITH BOOLEAN
+
+        ELSE IF B "metode pembayaran" is Credit Card Online
+            STORE CHOOSE "konfirmasi pembayaran" WITH BOOLEAN
+                IF berhasil "konfirmasi pembayaran" 
+                    STORE "pengiriman pesanan"
+                ELSE  
+                    STORE CHOOSE "metode pembayaran" WITH BOOLEAN
+                    
+        ELSE "metode pembayaran" is Online Banking
+            STORE CHOOSE "konfirmasi pembayaran" WITH BOOLEAN
+                IF berhasil "konfirmasi pembayaran" 
+                    STORE "pengiriman pesanan"
+                ELSE  
+                    STORE CHOOSE "metode pembayaran" WITH BOOLEAN
+
+END
